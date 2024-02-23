@@ -1,0 +1,129 @@
+:root {
+  --color-dark: #000000;
+  --color-light: #FFFFFF;
+  --color-primary: #008bff;
+  --color-primary-darker: #025294;
+  --color-primary-lighter: #3d92d9;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+          clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  clip: auto !important;
+  -webkit-clip-path: none !important;
+          clip-path: none !important;
+  height: auto !important;
+  margin: auto !important;
+  overflow: visible !important;
+  position: static !important;
+  width: auto !important;
+  white-space: normal !important;
+}
+
+.unstyled-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar__navigation {
+  background-color: var(--color-primary);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar__navigation-avatar-item {
+  display: none;
+}
+
+.sidebar__navigation-avatar {
+  aspect-ratio: 1;
+  display: block;
+  max-width: 100%;
+}
+
+.sidebar__navigation-menu-link {
+  color: var(--color-light);
+  display: inline-block;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.sidebar__navigation-menu-link:hover {
+  background-color: var(--color-primary-darker);
+}
+
+.sidebar__navigation-menu-link--active {
+  background-color: var(--color-primary-darker);
+}
+
+.sidebar__links {
+  column-gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 1rem 0;
+  row-gap: 1rem;
+}
+
+@media screen and (min-width:768px) {
+  .sidebar {
+    bottom: 0;
+    left: 0;
+    max-width: 20rem;
+    position: fixed;
+    top: 0;
+  }
+
+  .sidebar__navigation {
+    display: block;
+  }
+
+  .sidebar__navigation-avatar-item {
+    display: block;
+  }
+
+  .sidebar__navigation-avatar {
+    height: auto;
+    width: 100%;
+  }
+
+  .sidebar__navigation-menu-link {
+    display: block;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+
+  .main {
+    margin-left: 20rem;
+  }
+}

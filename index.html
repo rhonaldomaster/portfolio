@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rhonalf Martinez's portfolio page. Check the links and find his knowledge and strengths.">
+  <meta name="theme-color" content="#008bff">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex">
+
+  <meta property="og:site_name" content="Rhonalf's portfolio">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="Rhonalf's portfolio">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Rhonalf Martinez's portfolio page. Check the links and find his knowledge and strengths">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rhonalf's portfolio">
+  <meta name="twitter:description" content="Rhonalf Martinez's portfolio page. Check the links and find his knowledge and strengths">
+
+  <title>Rhonalf's portfolio</title>
+  <link rel="stylesheet" href="./assets/styles/normalize.css">
+  <link rel="stylesheet" href="./assets/styles/index.css">
+</head>
+<body>
+  <a href="#main" class="sr-only">Skip to main content</a>
+  <h1 class="sr-only">Rhonalf's portfolio content</h1>
+  <aside class="sidebar" aria-labelledby="sidebar-title">
+    <h2 id="sidebar-title" class="sr-only">Menu</h2>
+    <nav aria-labelledby="main-navigation-title">
+      <h3 id="main-navigation-title" class="sr-only">Section links</h3>
+      <ul class="sidebar__navigation unstyled-list" role="list">
+        <li class="sidebar__navigation-avatar-item" role="presentation">
+          <picture>
+            <source
+              media="(min-width: 768px)"
+              srcset="https://placekitten.com/200/200, https://placekitten.com/400/400 2x"
+            >
+            <img
+              src="https://placekitten.com/100/100"
+              srcset="https://placekitten.com/200/200 2x"
+              class="sidebar__navigation-avatar"
+              height="100"
+              width="100"
+              alt=""
+              loading="eager"
+            >
+          </picture>
+        </li>
+        <li>
+          <a
+          href="/"
+          class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
+        >Home</a>
+        </li>
+        <li>
+          <a
+            href="#about"
+            class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
+          >About</a>
+        </li>
+        <li>
+          <a
+            href="#work-experience"
+            class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
+            >Work experience</a>
+        </li>
+        <li>
+          <a
+            href="#studies"
+            class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
+          >Studies</a>
+        </li>
+      </ul>
+    </nav>
+    <nav aria-labelledby="navigation-social-title">
+      <h3 id="navigation-social-title" class="sr-only">Social networks and other sites</h3>
+      <ul class="sidebar__links unstyled-list" role="list">
+        <li>
+          <a
+            class="sidebar__links-link"
+            href="https://twitter.com/rhonaldomaster"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View on X"
+          >
+            <img src="./assets/images/twitter.svg" alt="" height="40" width="40">
+          </a>
+        </li>
+        <li>
+          <a
+            class="sidebar__links-link"
+            href="https://github.com/rhonaldomaster"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View on GitHub"
+          >
+            <img src="./assets/images/github.svg" alt="" height="40" width="40">
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <main id="main" class="main">
+    <section id="hero" class="hero">
+      <h2 class="hero__title">Hi, my name is Rhonalf Martinez</h2>
+      <p class="hero__text">Web developer</p>
+      <a href="#about" class="button">See more about me</a>
+    </section>
+    <section id="about" class="about">
+      <h2 class="about__title">About me</h2>
+      <p class="about__text">Computer Science Engineer with <span class="js-experience-years">15</span> years of experience in web development and information systems design, implementation and support, specialized in front-end web development. Knowledge of HTML, CSS, JavaScript, PHP and Ruby on Rails. Experience working with WordPress themes and plugins, and Shopify themes. Open source software developer.</p>
+      <h3 class="about__subtitle">Some links</h3>
+      <ul role="list">
+        <li>
+          <a
+            href="https://twitter.com/rhonaldomaster"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View on X"
+          >
+            <img src="./assets/images/twitter.svg" alt="" height="40" width="40">
+          </a>
+        </li>
+        <li>
+          <a
+            class="sidebar__links-link"
+            href="https://github.com/rhonaldomaster"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View on GitHub"
+          >
+            <img src="./assets/images/github.svg" alt="" height="40" width="40">
+          </a>
+        </li>
+      </ul>
+      <h3 class="about__subtitle">Tech stack</h3>
+      <p class="about__text">
+        Disclaimer: <em>The following ratings are based on my opinion and experience and may vary from the real knowledge.</em>
+      </p>
+      <ul role="list">
+        <li>
+          <label for="html-progress">HTML</label>
+          <progress id="html-progress" max="100" value="90">90%</progress>
+        </li>
+        <li>
+          <label for="css-progress">CSS</label>
+          <progress id="css-progress" max="100" value="80">80%</progress>
+        </li>
+        <li>
+          <h4>JavaScript</h4>
+          <p class="about__text">Known frameworks and/or libraries</p>
+          <ul role="list">
+            <li>
+              <label for="vanilla-progress">Vanilla JavaScript</label>
+              <progress id="vanilla-progress" max="100" value="70">70%</progress>
+            </li>
+            <li>
+              <label for="jquery-progress">jQuery</label>
+              <progress id="jquery-progress" max="100" value="70">70%</progress>
+            </li>
+            <li>
+              <label for="reactjs-progress">ReactJS</label>
+              <progress id="reactjs-progress" max="100" value="60">60%</progress>
+            </li>
+            <li>
+              <label for="vuejs-progress">VueJS (v2)</label>
+              <progress id="vuejs-progress" max="100" value="60">60%</progress>
+            </li>
+            <li>
+              <label for="lit-progress">Lit</label>
+              <progress id="lit-progress" max="100" value="50">50%</progress>
+            </li>
+            <li>
+              <label for="web-components-progress">Native web components</label>
+              <progress id="web-components-progress" max="100" value="60">60%</progress>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>PHP</h4>
+          <p class="about__text">Known frameworks and/or libraries</p>
+          <ul role="list">
+            <li>
+              <label for="wordpress-progress">WordPress</label>
+              <progress id="wordpress-progress" max="100" value="80">80%</progress>
+            </li>
+            <li>
+              <label for="codeigniter-progress">CodeIgniter</label>
+              <progress id="codeigniter-progress" max="100" value="50">50%</progress>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>Ruby</h4>
+          <p class="about__text">Known frameworks and/or libraries</p>
+          <ul role="list">
+            <li>
+              <label for="ruby-on-rails-progress">Ruby on Rails</label>
+              <progress id="ruby-on-rails-progress" max="100" value="50">50%</progress>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>Shopify</h4>
+          <p class="about__text">Known APIs</p>
+          <ul role="list">
+            <li>
+              <label for="liquid-progress">Liquid API</label>
+              <progress id="liquid-progress" max="100" value="85">85%</progress>
+            </li>
+            <li>
+              <label for="ajax-shopify-progress">Ajax API</label>
+              <progress id="ajax-shopify-progress" max="100" value="80">80%</progress>
+            </li>
+            <li>
+              <label for="recommendations-shopify-progress">Recommendations API</label>
+              <progress id="recommendations-shopify-progress" max="100" value="60">60%</progress>
+            </li>
+            <li>
+              <label for="section-shopify-progress">Section API</label>
+              <progress id="section-shopify-progress" max="100" value="50">50%</progress>
+            </li>
+            <li>
+              <label for="storefron-shopify-progress">Storefront API</label>
+              <progress id="storefron-shopify-progress" max="100" value="40">40%</progress>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <h4>Databases</h4>
+          <p class="about__text">Known databases</p>
+          <ul role="list">
+            <li>
+              <label for="mysql-progress">MySQL</label>
+              <progress id="mysql-progress" max="100" value="70">70%</progress>
+            </li>
+            <li>
+              <label for="mariadb-progress">MariaDB</label>
+              <progress id="mariadb-progress" max="100" value="70">70%</progress>
+            </li>
+            <li>
+              <label for="postgresql-progress">PostgreSQL</label>
+              <progress id="postgresql-progress" max="100" value="50">50%</progress>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section id="work-experience">
+      <h2>Work experience</h2>
+      <article>
+        <h3>Koombea</h3>
+        <p><strong>Position:</strong> Front-end developer</p>
+        <p><strong>Duration:</strong>
+          <time datetime="2016-03-02">2016-03-02</time> to <time class="js-today-date" datetime="2024-02-21">current date</time>
+        </p>
+        <h4>Responsibilities:</h4>
+        <ul role="list">
+          <li>Lead the end-to-end development and maintenance of company websites, ensuring optimal functionality, user experience, and responsiveness.</li>
+          <li>Implement strategic updates and improvements to enhance site performance and align with industry best practices.</li>
+          <li>Collaborate with cross-functional teams to integrate new features and technologies, contributing to a seamless online presence.</li>
+          <li>Play a pivotal role in analyzing and estimating project requirements, contributing to accurate sales forecasts and resource allocation.</li>
+          <li>Work closely with sales teams to understand client needs, providing detailed project assessments and cost estimates.</li>
+          <li>Serve as a mentor to interns and colleagues, fostering a collaborative and knowledge-sharing environment</li>
+        </ul>
+        <h4>Technologies:</h4>
+        <ul role="list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript: vanilla, ReactJS, VueJS, jQuery</li>
+          <li>Shopify</li>
+          <li>PHP and WordPress</li>
+          <li>Ruby on Rails</li>
+          <li>MySQL</li>
+        </ul>
+        <h4>Projects</h4>
+        <ul role="list">
+          <li>
+            <p>
+              <strong>Koombea:</strong> projects include online stores in Shopify and WordPress sites.
+            </p>
+            <dl>
+              <dt>Half Helix</dt>
+              <dd>
+                Digital product development company. Worked on some of their online store projects in Shopify.
+                <a href="https://www.halfhelix.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                <dl>
+                  <dt>Buxom Cosmetics</dt>
+                  <dd>
+                    Cosmetics online store (Shopify with Lit web components).
+                    <a href="https://buxomcosmetics.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  </dd>
+                  <dt>bareMinerals</dt>
+                  <dd>
+                    Cosmetics online store (Shopify with Lit web components).
+                    <a href="https://bareminerals.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  </dd>
+                  <dt>Laura Mercier</dt>
+                  <dd>
+                    Cosmetics online store (Shopify with Lit web components).
+                    <a href="https://lauramercier.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  </dd>
+                  <dt>Schleich USA</dt>
+                  <dd>
+                    Producer of hand painted toy figurines and accessories (Shopify with Lit web components).
+                    <a href="https://us.schleich-s.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  </dd>
+                  <dt>Rothy's</dt>
+                  <dd>
+                    Men's and women's shoes and bags (Shopify with VueJS 2).
+                    <a href="https://rothys.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  </dd>
+                  <dt>Paravel</dt>
+                  <dd>
+                    Sustainable Luggage, Bags, & Travel Accessories (Shopify with web components).
+                    <a href="https://tourparavel.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  </dd>
+                  <dt>Floyd Home</dt>
+                  <dd>
+                    Furniture store (Shopify with web components).
+                    <a href="https://floydhome.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  </dd>
+                  <dt>Peloton Apparel</dt>
+                  <dd>
+                    Fitness Apparel & Athletic Wear (Shopify with VueJS 2).
+                    <a href="https://apparel.onepeloton.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  </dd>
+                  <dt>Khaite</dt>
+                  <dd>
+                    Clothing and accessories for women (Shopify with VueJS 2).
+                    <a href="https://khaite.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  </dd>
+                  <dt>Soludos</dt>
+                  <dd>
+                    Casual footwear and accessories (Shopify with VueJS 2).
+                    <a href="https://soludos.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  </dd>
+                  <dt>Ulla Johnson</dt>
+                  <dd>
+                    Clothing, shoes & accessories (Shopify with VueJS 2).
+                    <a href="https://ullajohnson.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  </dd>
+                  <dt>Fenty Beauty</dt>
+                  <dd>
+                    Cosmetics online store (Shopify with VueJS 2).
+                    <a href="https://fentybeauty.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  </dd>
+                  <dt>Naadam</dt>
+                  <dd>
+                    Luxury knitwear online store (Shopify with VueJS 2).
+                    <a href="https://naadam.co/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  </dd>
+                  <dt>Fathead</dt>
+                  <dd>
+                    Retailer of life-sized, precision-cut vinyl wall graphics and cutouts (Shopify with VueJS 2).
+                    <a href="https://fathead.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  </dd>
+                </dl>
+              </dd>
+              <dt>Super-Sod</dt>
+              <dd>
+                Sod and grass seed supplier's online store (Shopify)
+                <a href="https://evolutionofsmooth.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+              </dd>
+            </dl>
+            <dl>
+              <dt>Evolution of Smooth (EOS)</dt>
+              <dd>
+                Beauty and skin care online store (Shopify)
+                <a href="https://evolutionofsmooth.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+              </dd>
+            </dl>
+            <dl>
+              <dt>Smart Sports</dt>
+              <dd>
+                News and podcast site. NBA and NFL news for Spanish speakers (WordPress).
+                <a href="https://www.smartsports.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+              </dd>
+            </dl>
+            <dl>
+              <dt>Linc Learning</dt>
+              <dd>
+                Educational resources company located in the US (WordPress).
+                <a href="https://linclearning.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+              </dd>
+            </dl>
+            <dl>
+              <dt>Muebles Jamar</dt>
+              <dd>
+                Furniture store located in Colombia (Shopify).
+                <a href="https://www.jamar.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+              </dd>
+            </dl>
+            <dl>
+              <dt>Do it Center</dt>
+              <dd>
+                Home goods store located in Panama (Shopify).
+                <a href="https://www.doitcenter.com.pa/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+              </dd>
+            </dl>
+            <dl>
+              <dt>New Balance Panama</dt>
+              <dd>
+                Sports wear online store (Shopify).
+                <a href="https://www.newbalance.com.pa/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+              </dd>
+            </dl>
+            <dl>
+              <dt>Cachette Capital</dt>
+              <dd>
+                Venture capital company website.
+                <a href="https://www.newbalance.com.pa/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+              </dd>
+            </dl>
+            <dl>
+              <dt>Kreative</dt>
+              <dd>
+                Digital marketing agency website.
+                <a href="https://www.bekreative.co/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+              </dd>
+            </dl>
+            <dl>
+              <dt>Saasler</dt>
+              <dd>
+                Service as a software company website.
+                <a href="https://www.saasler.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+              </dd>
+            </dl>
+            <dl>
+              <dt>Koombea</dt>
+              <dd>
+                Digital product development company website.
+                <a href="https://www.koombea.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+              </dd>
+            </dl>
+          </li>
+        </ul>
+      </article>
+      <article>
+        <h3>Procol</h3>
+        <p><strong>Position:</strong> Engineering and development assistant</p>
+        <p><strong>Duration:</strong>
+          <time datetime="2011-08-01">2011-08-01</time> to <time datetime="2016-02-29">2016-02-29</time>
+        </p>
+        <h4>Responsibilities:</h4>
+        <ul role="list">
+          <li>Support and continuous development of the internal web application.</li>
+          <li>Design and implement API integrations, contributing to the seamless flow of information between the internal system and external platforms.</li>
+          <li>Implement database optimizations and regular updates to keep systems current with industry standards and best practices.</li>
+        </ul>
+        <h4>Technologies:</h4>
+        <ul role="list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>PHP</li>
+          <li>MariaDB</li>
+        </ul>
+      </article>
+      <article>
+        <h3>I2B Technologies</h3>
+        <p><strong>Position:</strong> Java developer</p>
+        <p><strong>Duration:</strong>
+          <time datetime="2011-02-01">2011-01-01</time> to <time datetime="2011-06-30">2016-06-30</time>
+        </p>
+        <h4>Responsibilities:</h4>
+        <ul role="list">
+          <li>Collaborate with cross-functional teams to gather requirements, translating them into effective technical solutions for the internal web platform.</li>
+          <li>Utilize REST APIs proficiently to establish robust communication channels with external systems, enhancing data exchange efficiency.</li>
+        </ul>
+        <h4>Technologies:</h4>
+        <ul role="list">
+          <li>Java</li>
+          <li>MySQL</li>
+        </ul>
+      </article>
+      <article>
+        <h3>Geotech Solutions</h3>
+        <p><strong>Position:</strong> Development engineer</p>
+        <p><strong>Duration:</strong>
+          <time datetime="2010-03-01">2010-03-01</time> to <time datetime="2011-02-28">2016-02-28</time>
+        </p>
+        <h4>Responsibilities:</h4>
+        <ul role="list">
+          <li>Back-end development of clients websites.</li>
+          <li>Proactively identified and resolved issues, implementing enhancements to optimize performance and user experience.</li>
+          <li>Developed and executed backup and recovery procedures, safeguarding critical data and minimizing downtime.</li>
+        </ul>
+        <h4>Technologies:</h4>
+        <ul role="list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Java</li>
+          <li>PostgreSQL</li>
+        </ul>
+      </article>
+      <article>
+        <h3>Fintravalores SA</h3>
+        <p><strong>Position:</strong> Web developer</p>
+        <p><strong>Duration:</strong>
+          <time datetime="2009-06-01">2009-06-01</time> to <time datetime="2010-02-27">2010-02-27</time>
+        </p>
+        <h4>Responsibilities:</h4>
+        <ul role="list">
+          <li>Back-end development of clients websites.</li>
+          <li>Identify and resolve issues, implementing enhancements to optimize performance and user experience.</li>
+          <li>Develop and execute backup and recovery procedures.</li>
+          <li>Support and continuous development of the internal web application.</li>
+        </ul>
+        <h4>Technologies:</h4>
+        <ul role="list">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Java</li>
+          <li>PostgreSQL</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <h2>Contact me</h2>
+    <div>
+      <p>Barranquilla, CO</p>
+      <a href="mailto:email">Email me</a>
+      <a href="tel:+5711111111">Message (preferable) or call me</a>
+    </div>
+    <ul role="list">
+      <li>
+        <a href="https://twitter.com/rhonaldomaster" target="_blank" rel="noopener noreferrer">X</a>
+      </li>
+      <li>
+        <a href="https://github.com/rhonaldomaster" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </li>
+    </ul>
+  </footer>
+  <script src="./assets/scripts/index.js" defer></script>
+</body>
+</html>
