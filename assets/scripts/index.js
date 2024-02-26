@@ -26,3 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTodayDate();
   showActiveMenuLink();
 });
+
+window.addEventListener('hashchange', () => {
+  showActiveMenuLink();
+})

@@ -1,9 +1,15 @@
 :root {
   --color-dark: #000000;
   --color-light: #FFFFFF;
-  --color-primary: #008bff;
-  --color-primary-darker: #025294;
-  --color-primary-lighter: #3d92d9;
+  --color-gray: #c8c8c8;
+  --color-gray-lighter: #e3e3e3;
+  --color-gray-darker: #797878;
+  --color-primary: #008a90;
+  --color-primary-darker: #004448;
+  --color-primary-lighter: #00bcc8;
+
+  --color-button-hover: var(--color-gray-darker);
+  accent-color: var(--color-primary);
 }
 
 html {
@@ -56,20 +62,90 @@ a {
   padding: 0;
 }
 
-.sidebar__navigation {
+.button {
+  background-color: var(--color-gray);
+  border: 0;
+  border-radius: 0.8rem;
+  color: var(--color-dark);
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+}
+
+.button:active,
+.button:focus,
+.button:focus-within,
+.button:hover {
+  background-color: var(--color-button-hover);
+}
+
+.button--primary {
+  --color-button-hover: var(--color-primary-darker);
   background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+.button--details {
+  --color-button-hover: var(--color-gray);
+  background-color: var(--color-gray-lighter);
+  display: block;
+  margin-block-end: 2rem;
+  padding-inline-end: 2rem;
+  position: relative;
+}
+
+.button--details::marker {
+  content: none;
+}
+
+.button--details::after,
+.button--details::before {
+  border-bottom: 0.2rem solid var(--color-primary);
+  content: '';
+  padding: 0 0.5rem;
+  position: absolute;
+  right: 0.5rem;
+  top: calc(50% - 0.1rem);
+  transform: translateY(-50%);
+}
+
+.button--details::after {
+  top: calc(50% - 0.2rem);
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
+}
+
+[open] .button--details::after {
+  transform: rotate(0deg);
+}
+
+.custom-details {
+  /* to do */
+}
+
+.section-title {
+  margin-top: 0;
+}
+
+.sidebar {
+  background-color: var(--color-primary);
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.sidebar__navigation {
   display: flex;
   flex-wrap: wrap;
 }
 
-.sidebar__navigation-avatar-item {
-  display: none;
-}
-
-.sidebar__navigation-avatar {
+.sidebar__avatar {
   aspect-ratio: 1;
-  display: block;
+  display: none;
   max-width: 100%;
+  object-fit: cover;
 }
 
 .sidebar__navigation-menu-link {
@@ -87,7 +163,12 @@ a {
   background-color: var(--color-primary-darker);
 }
 
+.sidebar__links-navigation {
+  width: 100%;
+}
+
 .sidebar__links {
+  background-color: var(--color-primary-darker);
   column-gap: 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -95,35 +176,211 @@ a {
   row-gap: 1rem;
 }
 
+.sidebar__links-link {
+  filter: invert(1);
+}
+
+.main {
+  padding: 10rem 2rem 0;
+}
+
+/* hero */
+.hero {
+  aspect-ratio: 1;
+  background-attachment: fixed;
+  background-color: var(--color-dark);
+  background-image: url(../images/negative-space-css-syntax-code.jpg);
+  background-size: cover;
+  color: var(--color-light);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 -2rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero__title {
+  font-size: 3.2rem;
+  letter-spacing: 0.15rem;
+  margin-top: 0;
+}
+
+.hero__text {
+  font-size: 1.8rem;
+  letter-spacing: 0.05rem;
+}
+
+.hero__button {
+  margin: 0 auto;
+  max-width: fit-content;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* about */
+.about {
+  padding-top: 2rem;
+  scroll-margin-top: 10rem;
+}
+
+.about__stack {
+  position: relative;
+}
+
+.about__stack-label {
+  color: var(--color-light);
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+
+.rating-progress[value] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  height: 4rem;
+  width: 100%;
+}
+
+.rating-progress[value]::-webkit-progress-bar {
+  background: var(--color-gray);
+}
+
+.rating-progress[value]::-webkit-progress-value {
+  background: var(--color-primary);
+}
+
+.rating-progress[value]::-moz-progress-bar {
+  background: var(--color-primary);
+}
+
+.about__stack-tech {
+  background-color: rgba(200, 200, 200, 0.15);
+  border-radius: 0.4rem;
+  box-shadow: 0 0 1px var(--color-dark);
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.about__stack-tech-title {
+  margin-top: 0;
+}
+
+/* work experience */
+.work-experience {
+  padding-top: 2rem;
+  scroll-margin-top: 10rem;
+}
+
+.work-experience__projects dd {
+  margin-inline-start: 1.5rem;
+}
+
+.work-experience__client {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.work-experience__client-project {
+  font-weight: bold;
+}
+
+.work-experience__company {
+  background-color: rgba(200, 200, 200, 0.15);
+  border-radius: 0.4rem;
+  box-shadow: 0 0 1px var(--color-dark);
+  padding: 1rem;
+}
+
+.work-experience__company + .work-experience__company {
+  margin-top: 2rem;
+}
+
+.work-experience__company-title {
+  background-color: var(--color-primary);
+  border-radius: 0.4rem 0.4rem 0 0;
+  color: var(--color-light);
+  font-size: 2.2rem;
+  margin: -1rem -1rem 1.5rem -1rem;
+  padding: 1rem;
+}
+
+.work-experience__subtitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-block-end: 1rem;
+  margin-block-start: 0;
+}
+
+.work-experience__subtitle + dd {
+  margin-block-end: 1rem;
+  margin-inline-start: 1rem;
+}
+
 @media screen and (min-width:768px) {
   .sidebar {
+    align-items: center;
     bottom: 0;
-    left: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     max-width: 20rem;
-    position: fixed;
-    top: 0;
+    right: auto;
   }
 
   .sidebar__navigation {
     display: block;
   }
 
-  .sidebar__navigation-avatar-item {
+  .sidebar__avatar {
     display: block;
+    max-block-size: 20rem;
+    width: 100%;
   }
 
-  .sidebar__navigation-avatar {
-    height: auto;
+  .sidebar__menu {
     width: 100%;
   }
 
   .sidebar__navigation-menu-link {
+    box-shadow: inset 0 -1px 0px 1px var(--color-primary-darker);
     display: block;
     padding: 3rem 1rem;
     text-align: center;
   }
 
+  .sidebar__navigation-menu-link:hover {
+    box-shadow: inset 0 0 0 1px var(--color-primary-lighter);
+  }
+
+  .sidebar__links {
+    justify-content: center;
+  }
+
+  .sidebar__links-navigation {
+    margin-top: auto;
+  }
+
   .main {
     margin-left: 20rem;
+    padding-top: 0;
+  }
+
+  .hero {
+    aspect-ratio: 16 / 9;
+  }
+
+  .about,
+  .work-experience {
+    padding-top: 3rem;
+    scroll-margin-top: unset;
   }
 }
