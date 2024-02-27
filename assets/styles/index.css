@@ -4,9 +4,10 @@
   --color-gray: #c8c8c8;
   --color-gray-lighter: #e3e3e3;
   --color-gray-darker: #797878;
-  --color-primary: #008a90;
-  --color-primary-darker: #004448;
-  --color-primary-lighter: #00bcc8;
+  --color-primary: #004448;
+  --color-primary-darker: #002224;
+  --color-primary-lighter: #008a90;
+  --color-transparency-gray: rgba(200, 200, 200, 0.15);
 
   --color-button-hover: var(--color-gray-darker);
   accent-color: var(--color-primary);
@@ -27,6 +28,10 @@ body {
 
 a {
   color: var(--color-primary);
+}
+
+li + li {
+  margin-top: 1.2rem;
 }
 
 .sr-only {
@@ -72,6 +77,10 @@ a {
   text-decoration: none;
 }
 
+.unstyled-list li + li {
+  margin-top: 0;
+}
+
 .button:active,
 .button:focus,
 .button:focus-within,
@@ -89,9 +98,10 @@ a {
   --color-button-hover: var(--color-gray);
   background-color: var(--color-gray-lighter);
   display: block;
-  margin-block-end: 2rem;
-  padding-inline-end: 2rem;
+  margin: 0 -2rem;
+  padding-inline-end: 2.5rem;
   position: relative;
+  transition: background 1s;
 }
 
 .button--details::marker {
@@ -104,7 +114,7 @@ a {
   content: '';
   padding: 0 0.5rem;
   position: absolute;
-  right: 0.5rem;
+  right: 1rem;
   top: calc(50% - 0.1rem);
   transform: translateY(-50%);
 }
@@ -115,12 +125,28 @@ a {
   transform-origin: 50% 50%;
 }
 
+[open] .button--details {
+  --color-button-hover: var(--color-gray-lighter);
+  border-radius: 0.8rem 0.8rem 0 0;
+}
+
 [open] .button--details::after {
   transform: rotate(0deg);
 }
 
 .custom-details {
-  /* to do */
+  background-color: var(--color-gray-lighter);
+  border-radius: 0.8rem;
+  margin: 1rem 0;
+  padding: 0 2rem;
+}
+
+.custom-details[open] {
+  padding-block-end: 0.4rem;
+}
+
+.external-link-indicator {
+  vertical-align: middle;
 }
 
 .section-title {
@@ -138,7 +164,13 @@ a {
 
 .sidebar__navigation {
   display: flex;
-  flex-wrap: wrap;
+  overflow: auto;
+  scrollbar-width: none;
+  white-space: nowrap;
+}
+
+.sidebar__navigation::-webkit-scrollbar {
+  display: none;
 }
 
 .sidebar__avatar {
@@ -172,7 +204,7 @@ a {
   column-gap: 1rem;
   display: flex;
   flex-wrap: wrap;
-  padding: 1rem 1rem 0;
+  padding: 1rem 0.5rem 0.5rem;
   row-gap: 1rem;
 }
 
@@ -199,6 +231,10 @@ a {
   margin: 0 -2rem;
   padding: 2rem;
   text-align: center;
+
+  @supports (background-image: url(../images/negative-space-css-syntax-code.webp)) {
+    background-image: url(../images/negative-space-css-syntax-code.webp);
+  }
 }
 
 .hero__title {
@@ -235,7 +271,9 @@ a {
 }
 
 .about__stack-label {
+  background-color: var(--color-primary);
   color: var(--color-light);
+  line-height: 1.2;
   position: absolute;
   left: 1rem;
   top: 1rem;
@@ -246,24 +284,32 @@ a {
   -moz-appearance: none;
   appearance: none;
   border: none;
+  border-radius: 0.4rem;
   height: 4rem;
   width: 100%;
 }
 
 .rating-progress[value]::-webkit-progress-bar {
   background: var(--color-gray);
+  border-radius: 0.4rem;
 }
 
 .rating-progress[value]::-webkit-progress-value {
   background: var(--color-primary);
+  border-radius: 0.4rem;
 }
 
 .rating-progress[value]::-moz-progress-bar {
   background: var(--color-primary);
+  border-radius: 0.4rem;
+}
+
+.about__stack-list li + li {
+  margin-top: 1.2rem;
 }
 
 .about__stack-tech {
-  background-color: rgba(200, 200, 200, 0.15);
+  background-color: var(--color-transparency-gray);
   border-radius: 0.4rem;
   box-shadow: 0 0 1px var(--color-dark);
   padding: 1rem;
@@ -294,7 +340,7 @@ a {
 }
 
 .work-experience__company {
-  background-color: rgba(200, 200, 200, 0.15);
+  background-color: var(--color-transparency-gray);
   border-radius: 0.4rem;
   box-shadow: 0 0 1px var(--color-dark);
   padding: 1rem;
@@ -325,6 +371,78 @@ a {
   margin-inline-start: 1rem;
 }
 
+/* education */
+.education {
+  padding: 2rem 0;
+}
+
+/* tech talks */
+.tech-talks {
+  padding: 3rem 0;
+}
+
+.tech-talks__list {
+  column-gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  row-gap: 1.5rem;
+}
+
+.tech-talks__list-item {
+  background-color: var(--color-transparency-gray);
+  border-radius: 0.4rem;
+  box-shadow: 0 0 0 0.1rem var(--color-primary);
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+.tech-talks__list-item time {
+  margin-top: auto;
+}
+
+.tech-talks__list-item .external-link-indicator {
+  filter: invert(1);
+}
+
+.tech-talks__list-item-link {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  display: block;
+  line-height: 1.2;
+  margin: -1rem -1rem 0;
+  padding: 1rem;
+}
+
+/* footer */
+.main-footer {
+  background-color: var(--color-primary-darker);
+  color: var(--color-light);
+  margin-block-start: 2rem;
+  padding: 3rem 2rem 2rem;
+}
+
+.main-footer a {
+  color: var(--color-light);
+}
+
+.main-footer__title {
+  margin-top: 0;
+}
+
+.main-footer__links {
+  column-gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 2rem;
+}
+
+.main-footer__link {
+  filter: invert(1);
+}
+
 @media screen and (min-width:768px) {
   .sidebar {
     align-items: center;
@@ -338,6 +456,7 @@ a {
 
   .sidebar__navigation {
     display: block;
+    white-space: normal;
   }
 
   .sidebar__avatar {
@@ -382,5 +501,13 @@ a {
   .work-experience {
     padding-top: 3rem;
     scroll-margin-top: unset;
+  }
+
+  .tech-talks__list-item {
+    flex-basis: calc(33.3333% - 1.5rem);
+  }
+
+  .main-footer {
+    margin-left: 20rem;
   }
 }

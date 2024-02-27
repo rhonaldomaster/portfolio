@@ -16,7 +16,10 @@ function showActiveMenuLink() {
 
   links.forEach(link => {
     link.classList.remove(activeClassName);
-    if (link.href === window.location.href) {
+    if (
+      link.href === window.location.href ||
+      window.location.href === link.href + 'index.html'
+    ) {
       link.classList.add(activeClassName);
     }
   });

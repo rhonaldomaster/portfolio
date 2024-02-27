@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Rhonalf Martinez's portfolio page. Check the links and find his knowledge and strengths.">
-  <meta name="theme-color" content="#008bff">
+  <meta name="theme-color" content="#004448">
+
+  <!-- remove next two lines or change them to "index, follow" if you want to be found by search engines -->
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex">
 
@@ -18,6 +20,10 @@
   <meta name="twitter:title" content="Rhonalf's portfolio">
   <meta name="twitter:description" content="Rhonalf Martinez's portfolio page. Check the links and find his knowledge and strengths">
 
+  <link rel="preload" fetchpriority="high" as="style" href="./assets/styles/normalize.css" type="text/css">
+  <link rel="preload" fetchpriority="high" as="style" href="./assets/styles/index.css" type="text/css">
+  <link rel="preload" fetchpriority="high" as="image" href="./assets/images/negative-space-css-syntax-code.webp" type="image/webp">
+
   <title>Rhonalf's portfolio</title>
   <link rel="stylesheet" href="./assets/styles/normalize.css">
   <link rel="stylesheet" href="./assets/styles/index.css">
@@ -27,16 +33,18 @@
   <h1 class="sr-only">Rhonalf's portfolio content</h1>
   <aside class="sidebar" aria-labelledby="sidebar-title">
     <h2 id="sidebar-title" class="sr-only">Menu</h2>
-    <img
-      src="https://placekitten.com/200/200"
-      srcset="https://placekitten.com/400/400 2x"
-      onerror="this.onerror=null;this.src='https://placehold.co/200';this.srcset='https://placehold.co/400 2x'"
-      class="sidebar__avatar"
-      height="200"
-      width="200"
-      alt=""
-      loading="eager"
-    >
+    <picture>
+      <source srcset="./assets/images/avatar-200.webp, ./assets/images/avatar-400.webp 2x">
+      <img
+        src="./assets/images/avatar-200.jpg"
+        srcset="./assets/images/avatar-400.jpg 2x"
+        class="sidebar__avatar"
+        height="200"
+        width="200"
+        alt=""
+        loading="eager"
+      >
+    </picture>
     <nav class="sidebar__menu" aria-labelledby="main-navigation-title">
       <h3 id="main-navigation-title" class="sr-only">Section links</h3>
       <ul class="sidebar__navigation unstyled-list" role="list">
@@ -60,9 +68,15 @@
         </li>
         <li>
           <a
-            href="#studies"
+            href="#tech-talks"
             class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
-          >Studies</a>
+          >Tech talks</a>
+        </li>
+        <li>
+          <a
+            href="#education"
+            class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
+          >Education</a>
         </li>
       </ul>
     </nav>
@@ -77,7 +91,7 @@
             rel="noopener noreferrer"
             aria-label="View on X"
           >
-            <img src="./assets/images/twitter.svg" alt="" height="40" width="40">
+            <img src="./assets/images/twitter.svg" alt="" height="40" width="40" loading="lazy">
           </a>
         </li>
         <li>
@@ -88,7 +102,29 @@
             rel="noopener noreferrer"
             aria-label="View on GitHub"
           >
-            <img src="./assets/images/github.svg" alt="" height="40" width="40">
+            <img src="./assets/images/github.svg" alt="" height="40" width="40" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <a
+            class="sidebar__links-link"
+            href="https://instagram.com/rhonalf_mv"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View on Instagram"
+          >
+            <img src="./assets/images/instagram.svg" alt="" height="40" width="40" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <a
+            class="sidebar__links-link"
+            href="https://co.linkedin.com/in/rhonalf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View on LinkedIn"
+          >
+            <img src="./assets/images/linkedin.svg" alt="" height="40" width="40" loading="lazy">
           </a>
         </li>
       </ul>
@@ -106,10 +142,53 @@
       <h3 class="about__subtitle">Some of my repositories</h3>
       <ul role="list">
         <li>
-          <a href="https://github.com/rhonaldomaster/multifile" target="_blank" rel="noopener noreferrer">Multi images ajax uploader</a>
+          <a
+            href="https://github.com/rhonaldomaster/openair-k-colors"
+            target="_blank" rel="noopener noreferrer"
+          >Styles and functions for Koombea's OpenAir dashboard</a>
+          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+          <p>
+            <a
+              href="https://greasyfork.org/en/scripts/486690-koombea-openair-styles"
+              target="_blank" rel="noopener noreferrer"
+            >Install the styles from Greasyfork</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+          </p>
+          <p>
+            <a
+              href="https://greasyfork.org/en/scripts/482700-koombea-openair-functions"
+              target="_blank" rel="noopener noreferrer"
+            >Install the functions from Greasyfork</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+          </p>
         </li>
         <li>
-          <a href="https://github.com/rhonaldomaster/shopi-json-search" target="_blank" rel="noopener noreferrer">Ajax search in shopify</a>
+          <a
+            href="https://github.com/rhonaldomaster/multifile"
+            target="_blank" rel="noopener noreferrer"
+          >rzscript: adds features to ManagerZone's website (online manager game)</a>
+          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+          <p>
+            <a
+              href="https://greasyfork.org/en/scripts/482697-rzscript"
+              target="_blank" rel="noopener noreferrer"
+            >Install it from Greasyfork</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+          </p>
+        </li>
+        <li>
+          <a
+            href="https://github.com/rhonaldomaster/multifile"
+            target="_blank" rel="noopener noreferrer"
+          >Multi images ajax uploader</a>
+          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+        </li>
+        <li>
+          <a
+            href="https://github.com/rhonaldomaster/shopi-json-search"
+            target="_blank" rel="noopener noreferrer"
+          >Ajax search in shopify</a>
+          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
         </li>
       </ul>
       <h3 class="about__subtitle">Some links</h3>
@@ -121,6 +200,7 @@
             rel="noopener noreferrer"
             aria-label="View on X"
           >X</a>
+          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
         </li>
         <li>
           <a
@@ -129,6 +209,25 @@
             rel="noopener noreferrer"
             aria-label="View on GitHub"
           >GitHub</a>
+          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+        </li>
+        <li>
+          <a
+            href="https://co.linkedin.com/in/rhonalf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View on LinkedIn"
+          >LinkedIn</a>
+          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+        </li>
+        <li>
+          <a
+            href="https://instagram.com/rhonalf_mv"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View on Instagram"
+          >Instagram</a>
+          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
         </li>
       </ul>
       <h3 class="about__subtitle">Tech stack</h3>
@@ -137,7 +236,7 @@
         <em>The following ratings are based on my opinion and experience and may vary from the real knowledge.</em>
         Ratings go from zero to one-hundred percent.
       </p>
-      <ul class="unstyled-list" role="list">
+      <ul class="unstyled-list about__stack-list" role="list">
         <li class="about__stack">
           <label class="about__stack-label" for="html-progress">HTML</label>
           <progress class="rating-progress" id="html-progress" max="100" value="90">90%</progress>
@@ -279,8 +378,10 @@
         <dl class="work-experience__projects">
           <dt class="work-experience__client">Half Helix</dt>
           <dd>
-            Digital product development company. Worked on some of their online store projects in Shopify.
-            <a href="https://www.halfhelix.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+            <p>Digital product development company. Worked on some of their online store projects in Shopify.
+              <a href="https://www.halfhelix.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+              <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+            </p>
             <details class="custom-details">
               <summary class="button button--details">View project list here</summary>
               <dl>
@@ -288,71 +389,85 @@
                 <dd>
                   Cosmetics online store (Shopify with Lit web components).
                   <a href="https://buxomcosmetics.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">bareMinerals</dt>
                 <dd>
                   Cosmetics online store (Shopify with Lit web components).
                   <a href="https://bareminerals.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Laura Mercier</dt>
                 <dd>
                   Cosmetics online store (Shopify with Lit web components).
                   <a href="https://lauramercier.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Schleich USA</dt>
                 <dd>
                   Producer of hand painted toy figurines and accessories (Shopify with Lit web components).
                   <a href="https://us.schleich-s.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Rothy's</dt>
                 <dd>
                   Men's and women's shoes and bags (Shopify with VueJS 2).
                   <a href="https://rothys.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Paravel</dt>
                 <dd>
                   Sustainable Luggage, Bags, & Travel Accessories (Shopify with web components).
                   <a href="https://tourparavel.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Floyd Home</dt>
                 <dd>
                   Furniture store (Shopify with web components).
                   <a href="https://floydhome.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Peloton Apparel</dt>
                 <dd>
                   Fitness Apparel & Athletic Wear (Shopify with VueJS 2).
                   <a href="https://apparel.onepeloton.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Khaite</dt>
                 <dd>
                   Clothing and accessories for women (Shopify with VueJS 2).
                   <a href="https://khaite.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Soludos</dt>
                 <dd>
                   Casual footwear and accessories (Shopify with VueJS 2).
                   <a href="https://soludos.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Ulla Johnson</dt>
                 <dd>
                   Clothing, shoes & accessories (Shopify with VueJS 2).
                   <a href="https://ullajohnson.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Fenty Beauty</dt>
                 <dd>
                   Cosmetics online store (Shopify with VueJS 2).
                   <a href="https://fentybeauty.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Naadam</dt>
                 <dd>
                   Luxury knitwear online store (Shopify with VueJS 2).
                   <a href="https://naadam.co/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Fathead</dt>
                 <dd>
                   Retailer of life-sized, precision-cut vinyl wall graphics and cutouts (Shopify with VueJS 2).
                   <a href="https://fathead.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
               </dl>
             </details>
@@ -360,73 +475,84 @@
 
           <dt class="work-experience__client">Super-Sod</dt>
           <dd>
-            Sod and grass seed supplier's online store (Shopify)
+            Sod and grass seed supplier's online store (Shopify).
             <a href="https://evolutionofsmooth.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Evolution of Smooth (EOS)</dt>
           <dd>
-            Beauty and skin care online store (Shopify)
+            Beauty and skin care online store (Shopify).
             <a href="https://evolutionofsmooth.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Smart Sports</dt>
           <dd>
             News and podcast site. NBA and NFL news for Spanish speakers (WordPress).
             <a href="https://www.smartsports.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Linc Learning</dt>
           <dd>
             Educational resources company located in the US (WordPress).
             <a href="https://linclearning.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Muebles Jamar</dt>
           <dd>
             Furniture store located in Colombia (Shopify).
             <a href="https://www.jamar.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Do it Center</dt>
           <dd>
             Home goods store located in Panama (Shopify).
             <a href="https://www.doitcenter.com.pa/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">New Balance Panama</dt>
           <dd>
             Sports wear online store (Shopify).
             <a href="https://www.newbalance.com.pa/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Cachette Capital</dt>
           <dd>
             Venture capital company website.
             <a href="https://www.newbalance.com.pa/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Kreative</dt>
           <dd>
             Digital marketing agency website.
             <a href="https://www.bekreative.co/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Saasler</dt>
           <dd>
             Service as a software company website.
             <a href="https://www.saasler.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Koombea</dt>
           <dd>
             Digital product development company website.
             <a href="https://www.koombea.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
         </dl>
       </article>
       <article class="work-experience__company">
-        <h3 class="work-experience__company-title">Procol</h3>
+        <h3 class="work-experience__company-title">Procol de Colombia S.A</h3>
         <dl>
           <dt class="work-experience__subtitle">Position:</dt>
           <dd>Engineering and development assistant</dd>
@@ -447,6 +573,9 @@
           <li>PHP</li>
           <li>MariaDB</li>
         </ul>
+        <h4 class="work-experience__subtitle">Projects:</h4>
+        <p>Internal management web application (PHP, MariaDB)</p>
+        <p>Achieved: initial implementation of the internal management application.</p>
       </article>
       <article class="work-experience__company">
         <h3 class="work-experience__company-title">I2B Technologies</h3>
@@ -454,7 +583,7 @@
           <dt class="work-experience__subtitle">Position:</dt>
           <dd>Java developer</dd>
           <dt class="work-experience__subtitle">Duration:</dt>
-          <dd><time datetime="2011-02-01">2011-01-01</time> to <time datetime="2011-06-30">2016-06-30</time></dd>
+          <dd><time datetime="2011-02-01">2011-02-01</time> to <time datetime="2011-05-31">2016-05-31</time></dd>
         </dl>
         <h4 class="work-experience__subtitle">Responsibilities:</h4>
         <ul role="list">
@@ -466,6 +595,8 @@
           <li>Java</li>
           <li>MySQL</li>
         </ul>
+        <h4 class="work-experience__subtitle">Projects:</h4>
+        <p>Entel's web application (Java, MySQL)</p>
       </article>
       <article class="work-experience__company">
         <h3 class="work-experience__company-title">Geotech Solutions</h3>
@@ -473,7 +604,7 @@
           <dt class="work-experience__subtitle">Position:</dt>
           <dd>Development engineer</dd>
           <dt class="work-experience__subtitle">Duration:</dt>
-          <dd><time datetime="2010-03-01">2010-03-01</time> to <time datetime="2011-02-28">2016-02-28</time></dd>
+          <dd><time datetime="2010-03-01">2010-03-01</time> to <time datetime="2011-01-31">2011-01-31</time></dd>
         </dl>
         <h4 class="work-experience__subtitle">Responsibilities:</h4>
         <ul role="list">
@@ -488,14 +619,17 @@
           <li>Java</li>
           <li>PostgreSQL</li>
         </ul>
+        <h4 class="work-experience__subtitle">Projects:</h4>
+        <p>Fintravalores' internal management web application.</p>
+        <p>Achieved a huge improvement on internal's application performance.</p>
       </article>
       <article class="work-experience__company">
         <h3 class="work-experience__company-title">Fintravalores SA</h3>
         <dl>
           <dt class="work-experience__subtitle">Position:</dt>
-          <dd>Web developer</dd>
+          <dd>Software developer</dd>
           <dt class="work-experience__subtitle">Duration:</dt>
-          <dd><time datetime="2009-06-01">2009-06-01</time> to <time datetime="2010-02-27">2010-02-27</time></dd>
+          <dd><time datetime="2009-06-01">2009-06-01</time> to <time datetime="2010-02-28">2010-02-28</time></dd>
         </dl>
         <h4 class="work-experience__subtitle">Responsibilities:</h4>
         <ul role="list">
@@ -512,22 +646,187 @@
           <li>Java</li>
           <li>PostgreSQL</li>
         </ul>
+        <h4 class="work-experience__subtitle">Projects:</h4>
+        <p>Internal management web application</p>
       </article>
     </section>
+    <section id="tech-talks" class="tech-talks">
+      <h2 class="section-title">Tech Talks</h2>
+      <ul class="unstyled-list tech-talks__list">
+        <li class="tech-talks__list-item">
+          <a
+            class="tech-talks__list-item-link"
+            href="https://youtu.be/Rizam0Mzsc8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Accesibility and UX/UI trendings in 2023.<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+          <p>Tech talk for Koombea.</p>
+          <time datetime="2023-04-13">April 13, 2023</time>
+        </li>
+        <li class="tech-talks__list-item">
+          <a
+            class="tech-talks__list-item-link"
+            href="https://youtu.be/FKRHRmJSwFc"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Shopify theme customization.<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+          <p>Tech talk for Koombea.</p>
+          <time datetime="2020-10-29">October 29, 2020</time>
+        </li>
+        <li class="tech-talks__list-item">
+          <a
+            class="tech-talks__list-item-link"
+            href="https://www.meetup.com/wordpress-barranquilla/events/268856122/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >How to improve WordPress performance.<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+          <p>Tech talk for WordPress Barranquilla group.</p>
+          <time datetime="2020-04-18">April 18, 2020</time>
+        </li>
+        <li class="tech-talks__list-item">
+          <a
+            class="tech-talks__list-item-link"
+            href="https://www.meetup.com/wordpress-barranquilla/events/266249767/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >What do Open Source and GPL license mean?<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+          <p>Tech talk for WordPress Barranquilla group.</p>
+          <time datetime="2019-11-30">November 30, 2019</time>
+        </li>
+        <li class="tech-talks__list-item">
+          <a
+            class="tech-talks__list-item-link"
+            href="https://www.meetup.com/wordpress-barranquilla/events/261349161/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Getting to know WordPress' REST API.<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+          <p>Tech talk for WordPress Barranquilla group.</p>
+          <time datetime="2019-05-25">May 25, 2019</time>
+        </li>
+        <li class="tech-talks__list-item">
+          <a
+            class="tech-talks__list-item-link"
+            href="https://www.meetup.com/wordpress-barranquilla/events/255803415/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >AJAX in WordPress.<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+          <p>Tech talk for Barranquilla Open Source enthusiasts.</p>
+          <time datetime="2018-11-24">November 24, 2018</time>
+        </li>
+        <li class="tech-talks__list-item">
+          <a
+            class="tech-talks__list-item-link"
+            href="https://2018.bogota.wordcamp.org/session/wordpress-gym-tips-para-mejorar-el-desarrollo-de-temas/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >WordPress gym.<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+          <p>Tech talk for WordCamp Bogota.</p>
+          <time datetime="2018-11-10">November 10, 2018</time>
+        </li>
+        <li class="tech-talks__list-item">
+          <a
+            class="tech-talks__list-item-link"
+            href="https://www.meetup.com/wordpress-barranquilla/events/245921270/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >AJAX for WordPress: how to use it correctly.<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+          <p>Tech talk for WordPress Barranquilla.</p>
+          <time datetime="2017-12-21">December 21, 2017</time>
+        </li>
+        <li class="tech-talks__list-item">
+          <a
+            class="tech-talks__list-item-link"
+            href="https://2017.bogota.wordcamp.org/session/plugins-en-wordpress-no-papa-shortcodes/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >WordPress' plugins? No, shortcodes.<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+          <p>Tech talk for WordCamp Bogota.</p>
+          <time datetime="2017-09-07">September 07, 2017</time>
+        </li>
+      </ul>
+    </section>
+    <section id="education" class="education">
+      <h2 class="section-title">Education</h2>
+      <h3>Bachelor's degree</h3>
+      <ul>
+        <li><strong>Systems engineer</strong>: Universidad del Norte, 2009. Barranquilla, CO.</li>
+      </ul>
+      <h3>Languages</h3>
+      <ul>
+        <li><strong>Spanish</strong>: native speaker</li>
+        <li>
+          <strong>English</strong>:
+          <a href="https://certs.duolingo.com/4afe0f3b08315fefae49a49278fd1557" target="_blank" rel="noopener noreferrer">MCER/CEFR C1</a>
+          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+        </li>
+      </ul>
+    </section>
   </main>
-  <footer>
-    <h2>Contact me</h2>
-    <div>
-      <p>Barranquilla, CO</p>
-      <a href="mailto:email">Email me</a>
-      <a href="tel:+5711111111">Message (preferable) or call me</a>
-    </div>
-    <ul role="list">
+  <footer class="main-footer">
+    <h2 class="main-footer__title">Contact me</h2>
+    <p>Barranquilla, CO</p>
+    <ul class="unstyled-list main-footer__links" role="list">
       <li>
-        <a href="https://twitter.com/rhonaldomaster" target="_blank" rel="noopener noreferrer">X</a>
+        <a
+          class="main-footer__link"
+          href="mailto:rhonaldomaster@gmail.com"
+          aria-label="Email me"
+        >
+          <img src="./assets/images/email.svg" alt="" height="40" width="40" loading="lazy">
+        </a>
       </li>
       <li>
-        <a href="https://github.com/rhonaldomaster" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a
+          class="main-footer__link"
+          href="tel:+573015614702"
+          aria-label="Message (preferable) or call me"
+        >
+          <img src="./assets/images/cellphone-tool.svg" alt="" height="40" width="40" loading="lazy">
+        </a>
+      </li>
+      <li>
+        <a
+          class="main-footer__link"
+          href="https://twitter.com/rhonaldomaster"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View on X"
+        >
+          <img src="./assets/images/twitter.svg" alt="" height="40" width="40" loading="lazy">
+        </a>
+      </li>
+      <li>
+        <a
+          class="main-footer__link"
+          href="https://github.com/rhonaldomaster"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View on GitHub"
+        >
+          <img src="./assets/images/github.svg" alt="" height="40" width="40" loading="lazy">
+        </a>
+      </li>
+      <li>
+        <a
+          class="main-footer__link"
+          href="https://instagram.com/rhonalf_mv"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View on Instagram"
+        >
+          <img src="./assets/images/instagram.svg" alt="" height="40" width="40" loading="lazy">
+        </a>
+      </li>
+      <li>
+        <a
+          class="main-footer__link"
+          href="https://co.linkedin.com/in/rhonalf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View on LinkedIn"
+        >
+          <img src="./assets/images/linkedin.svg" alt="" height="40" width="40" loading="lazy">
+        </a>
       </li>
     </ul>
   </footer>
