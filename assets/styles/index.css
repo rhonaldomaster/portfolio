@@ -42,6 +42,7 @@ li + li {
   height: 1px !important;
   overflow: hidden !important;
   margin: -1px !important;
+  opacity: 0;
   padding: 0 !important;
   position: absolute !important;
   width: 1px !important;
@@ -154,7 +155,6 @@ li + li {
 }
 
 .sidebar {
-  background-color: var(--color-primary);
   left: 0;
   position: fixed;
   right: 0;
@@ -162,15 +162,56 @@ li + li {
   z-index: 1;
 }
 
-.sidebar__navigation {
-  display: flex;
-  overflow: auto;
-  scrollbar-width: none;
-  white-space: nowrap;
+.sidebar--open {
+  bottom: 0;
 }
 
-.sidebar__navigation::-webkit-scrollbar {
+.sidebar-toggle {
+  background-color: var(--color-light);
+  border-radius: 0.4rem;
+  box-shadow: 0 0 0 0.1rem var(--color-primary-darker);
+  line-height: 1;
+  margin-left: calc(100% - 5.5rem);
+  margin-top: 1rem;
+  padding: 0.9rem 0.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar-toggle:active,
+.sidebar-toggle:hover,
+.sidebar-toggle:focus,
+.sidebar-toggle:focus-within {
+  --color-button-hover: var(--color-gray-lighter);
+  opacity: 1;
+}
+
+.sidebar-toggle .hamburger-box {
+  pointer-events: none;
+}
+
+.hamburger-inner,
+.hamburger-inner::after,
+.hamburger-inner::before,
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::after,
+.hamburger.is-active .hamburger-inner::before {
+  background-color: var(--color-primary);
+}
+
+.sidebar__navigation {
+  background-color: var(--color-primary);
   display: none;
+}
+
+.sidebar__navigation--visible {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: calc(100dvh + 0.1rem);
+  justify-content: space-between;
+  margin-top: -5.5rem;
+  padding-top: 5.5rem;
 }
 
 .sidebar__avatar {
@@ -181,9 +222,11 @@ li + li {
 }
 
 .sidebar__navigation-menu-link {
+  box-shadow: 0 0 0 0.1rem var(--color-primary-darker);
   color: var(--color-light);
-  display: inline-block;
-  padding: 1rem;
+  display: block;
+  padding: 3rem 1rem;
+  text-align: center;
   text-decoration: none;
 }
 
@@ -213,7 +256,7 @@ li + li {
 }
 
 .main {
-  padding: 10rem 2rem 0;
+  padding: 0 2rem;
 }
 
 /* hero */
@@ -263,7 +306,6 @@ li + li {
 /* about */
 .about {
   padding-top: 2rem;
-  scroll-margin-top: 10rem;
 }
 
 .about__stack {
@@ -323,7 +365,6 @@ li + li {
 /* work experience */
 .work-experience {
   padding-top: 2rem;
-  scroll-margin-top: 10rem;
 }
 
 .work-experience__projects dd {
@@ -433,10 +474,10 @@ li + li {
 }
 
 .main-footer__links {
-  column-gap: 2rem;
+  column-gap: 1.6rem;
   display: flex;
   flex-wrap: wrap;
-  row-gap: 2rem;
+  row-gap: 1.6rem;
 }
 
 .main-footer__link {
@@ -449,14 +490,9 @@ li + li {
     bottom: 0;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     max-width: 20rem;
     right: auto;
-  }
-
-  .sidebar__navigation {
-    display: block;
-    white-space: normal;
   }
 
   .sidebar__avatar {
@@ -469,15 +505,30 @@ li + li {
     width: 100%;
   }
 
+  .sidebar__navigation {
+    display: flex;
+    flex-basis: calc(100% - 20rem);
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .sidebar__navigation--visible {
+    height: auto;
+    justify-content: unset;
+    margin-top: unset;
+    padding-top: unset;
+  }
+
+  .sidebar-toggle {
+    display: none;
+  }
+
   .sidebar__navigation-menu-link {
-    box-shadow: inset 0 -1px 0px 1px var(--color-primary-darker);
-    display: block;
-    padding: 3rem 1rem;
-    text-align: center;
+    box-shadow: inset 0 -0.1rem 0 0.1rem var(--color-primary-darker);
   }
 
   .sidebar__navigation-menu-link:hover {
-    box-shadow: inset 0 0 0 1px var(--color-primary-lighter);
+    box-shadow: inset 0 0 0 0.1rem var(--color-primary-lighter);
   }
 
   .sidebar__links {
@@ -503,11 +554,13 @@ li + li {
     scroll-margin-top: unset;
   }
 
-  .tech-talks__list-item {
-    flex-basis: calc(33.3333% - 1.5rem);
-  }
-
   .main-footer {
     margin-left: 20rem;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .tech-talks__list-item {
+    flex-basis: calc(33.3333% - 1.5rem);
   }
 }

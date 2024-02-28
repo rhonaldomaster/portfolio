@@ -26,12 +26,16 @@
 
   <title>Rhonalf's portfolio</title>
   <link rel="stylesheet" href="./assets/styles/normalize.css">
+  <link rel="preload" as="style" href="./assets/styles/hamburgers.css" onload="this.onload=null;this.rel='stylesheet';this.removeAttribute('as')">
+  <noscript>
+    <link rel="stylesheet" href="./assets/styles/hamburgers.css">
+  </noscript>
   <link rel="stylesheet" href="./assets/styles/index.css">
 </head>
 <body>
   <a href="#main" class="sr-only">Skip to main content</a>
   <h1 class="sr-only">Rhonalf's portfolio content</h1>
-  <aside class="sidebar" aria-labelledby="sidebar-title">
+  <aside class="sidebar js-aside" aria-labelledby="sidebar-title">
     <h2 id="sidebar-title" class="sr-only">Menu</h2>
     <picture>
       <source srcset="./assets/images/avatar-200.webp, ./assets/images/avatar-400.webp 2x">
@@ -45,90 +49,103 @@
         loading="eager"
       >
     </picture>
-    <nav class="sidebar__menu" aria-labelledby="main-navigation-title">
-      <h3 id="main-navigation-title" class="sr-only">Section links</h3>
-      <ul class="sidebar__navigation unstyled-list" role="list">
-        <li>
-          <a
-            href="/"
-            class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link sidebar__navigation-menu-link--active"
-          >Home</a>
-        </li>
-        <li>
-          <a
-            href="#about"
-            class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
-          >About</a>
-        </li>
-        <li>
-          <a
-            href="#work-experience"
-            class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
-            >Work experience</a>
-        </li>
-        <li>
-          <a
-            href="#tech-talks"
-            class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
-          >Tech talks</a>
-        </li>
-        <li>
-          <a
-            href="#education"
-            class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
-          >Education</a>
-        </li>
-      </ul>
-    </nav>
-    <nav class="sidebar__links-navigation" aria-labelledby="navigation-social-title">
-      <h3 id="navigation-social-title" class="sr-only">Social networks and other sites</h3>
-      <ul class="sidebar__links unstyled-list" role="list">
-        <li>
-          <a
-            class="sidebar__links-link"
-            href="https://twitter.com/rhonaldomaster"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View on X"
-          >
-            <img src="./assets/images/twitter.svg" alt="" height="40" width="40" loading="lazy">
-          </a>
-        </li>
-        <li>
-          <a
-            class="sidebar__links-link"
-            href="https://github.com/rhonaldomaster"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View on GitHub"
-          >
-            <img src="./assets/images/github.svg" alt="" height="40" width="40" loading="lazy">
-          </a>
-        </li>
-        <li>
-          <a
-            class="sidebar__links-link"
-            href="https://instagram.com/rhonalf_mv"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View on Instagram"
-          >
-            <img src="./assets/images/instagram.svg" alt="" height="40" width="40" loading="lazy">
-          </a>
-        </li>
-        <li>
-          <a
-            class="sidebar__links-link"
-            href="https://co.linkedin.com/in/rhonalf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View on LinkedIn"
-          >
-            <img src="./assets/images/linkedin.svg" alt="" height="40" width="40" loading="lazy">
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <button
+      type="button"
+      class="button hamburger hamburger--elastic sidebar-toggle js-sidebar-toggle"
+      aria-controls="main-menu"
+      aria-expanded="false"
+      aria-label="Open main menu"
+    >
+      <span class="hamburger-box" aria-hidden="true">
+        <span class="hamburger-inner" aria-hidden="true"></span>
+      </span>
+    </button>
+    <div id="main-menu" class="sidebar__navigation js-sidebar-navigation">
+      <nav class="sidebar__menu" aria-labelledby="main-navigation-title">
+        <h3 id="main-navigation-title" class="sr-only">Section links</h3>
+        <ul class="unstyled-list" role="list">
+          <li>
+            <a
+              href="./"
+              class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link sidebar__navigation-menu-link--active"
+            >Home</a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
+            >About</a>
+          </li>
+          <li>
+            <a
+              href="#work-experience"
+              class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
+              >Work experience</a>
+          </li>
+          <li>
+            <a
+              href="#tech-talks"
+              class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
+            >Tech talks</a>
+          </li>
+          <li>
+            <a
+              href="#education"
+              class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
+            >Education</a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="sidebar__links-navigation" aria-labelledby="navigation-social-title">
+        <h3 id="navigation-social-title" class="sr-only">Social networks and other sites</h3>
+        <ul class="sidebar__links unstyled-list" role="list">
+          <li>
+            <a
+              class="sidebar__links-link"
+              href="https://twitter.com/rhonaldomaster"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View on X"
+            >
+              <img src="./assets/images/twitter.svg" alt="" height="40" width="40" loading="lazy">
+            </a>
+          </li>
+          <li>
+            <a
+              class="sidebar__links-link"
+              href="https://github.com/rhonaldomaster"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View on GitHub"
+            >
+              <img src="./assets/images/github.svg" alt="" height="40" width="40" loading="lazy">
+            </a>
+          </li>
+          <li>
+            <a
+              class="sidebar__links-link"
+              href="https://instagram.com/rhonalf_mv"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View on Instagram"
+            >
+              <img src="./assets/images/instagram.svg" alt="" height="40" width="40" loading="lazy">
+            </a>
+          </li>
+          <li>
+            <a
+              class="sidebar__links-link"
+              href="https://co.linkedin.com/in/rhonalf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View on LinkedIn"
+            >
+              <img src="./assets/images/linkedin.svg" alt="" height="40" width="40" loading="lazy">
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </aside>
   <main id="main" class="main">
     <section id="hero" class="hero">
@@ -476,7 +493,7 @@
           <dt class="work-experience__client">Super-Sod</dt>
           <dd>
             Sod and grass seed supplier's online store (Shopify).
-            <a href="https://evolutionofsmooth.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+            <a href="https://shop.supersod.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
             <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
@@ -525,7 +542,7 @@
           <dt class="work-experience__client">Cachette Capital</dt>
           <dd>
             Venture capital company website.
-            <a href="https://www.newbalance.com.pa/" target="_blank" rel="noopener noreferrer">Visit their website</a>
+            <a href="https://www.cachettecapital.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
             <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
@@ -620,8 +637,7 @@
           <li>PostgreSQL</li>
         </ul>
         <h4 class="work-experience__subtitle">Projects:</h4>
-        <p>Fintravalores' internal management web application.</p>
-        <p>Achieved a huge improvement on internal's application performance.</p>
+        <p>Fintravalores' internal management web application. Achieved a great improvement on application's performance.</p>
       </article>
       <article class="work-experience__company">
         <h3 class="work-experience__company-title">Fintravalores SA</h3>
@@ -736,12 +752,32 @@
         <li class="tech-talks__list-item">
           <a
             class="tech-talks__list-item-link"
+            href="https://www.meetup.com/wordpress-barranquilla/events/243491395/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >WordPress' plugins? No, shortcodes.<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+          <p>Tech talk for WordPress Barranquilla.</p>
+          <time datetime="2017-10-04">October 04, 2017</time>
+        </li>
+        <li class="tech-talks__list-item">
+          <a
+            class="tech-talks__list-item-link"
             href="https://2017.bogota.wordcamp.org/session/plugins-en-wordpress-no-papa-shortcodes/"
             target="_blank"
             rel="noopener noreferrer"
           >WordPress' plugins? No, shortcodes.<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
           <p>Tech talk for WordCamp Bogota.</p>
           <time datetime="2017-09-07">September 07, 2017</time>
+        </li>
+        <li class="tech-talks__list-item">
+          <a
+            class="tech-talks__list-item-link"
+            href="https://www.meetup.com/wordpress-barranquilla/events/239666861/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Reusable Snippets in WordPress [shortcodes].<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+          <p>Tech talk for WordPress Barranquilla.</p>
+          <time datetime="2017-05-08">May 08, 2017</time>
         </li>
       </ul>
     </section>
