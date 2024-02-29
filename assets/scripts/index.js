@@ -5,7 +5,6 @@ function renderTodayDate() {
   const elements = document.querySelectorAll('.js-today-date');
   elements.forEach(element => {
     element.datetime = formattedDate;
-    // element.textContent = formattedDate;
   });
   document.querySelector('.js-experience-years').textContent = currentDate.getFullYear() - experienceStartedOnYear;
 }
@@ -38,9 +37,52 @@ function toggleSidebar(button) {
   }
 }
 
+function addSidebarObserver() {
+  const isTab = window.matchMedia('(min-width: 768px)');
+  if (!isTab.matches) {
+    return;
+  }
+
+  const sections = document.querySelectorAll('section[id]');
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+  const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+}
+
+function handleIntersection(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const currentSectionId = entry.target.id;
+      updateActiveLink(currentSectionId);
+    }
+  });
+}
+
+function updateActiveLink(currentSectionId) {
+  const activeClassName = 'sidebar__navigation-menu-link--active';
+  const sidebarLinks = document.querySelectorAll('.js-sidebar-navigation-menu-link');
+
+  sidebarLinks.forEach(link => {
+    link.classList.remove(activeClassName);
+    if (link.getAttribute('href') === `#${currentSectionId}`) {
+      link.classList.add(activeClassName);
+    } else if (link.getAttribute('href') === './' && currentSectionId === 'hero') {
+      link.classList.add(activeClassName);
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderTodayDate();
   showActiveMenuLink();
+  addSidebarObserver();
 
   document.addEventListener('click', (ev) => {
     const targetClassList = ev.target.classList ?? [];

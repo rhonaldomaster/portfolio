@@ -1,12 +1,13 @@
 :root {
   --color-dark: #000000;
-  --color-light: #FFFFFF;
+  --color-light: #ffffff;
   --color-gray: #c8c8c8;
   --color-gray-lighter: #e3e3e3;
   --color-gray-darker: #797878;
   --color-primary: #004448;
   --color-primary-darker: #002224;
   --color-primary-lighter: #008a90;
+  --color-scarlet: #ff2400;
   --color-transparency-gray: rgba(200, 200, 200, 0.15);
 
   --color-button-hover: var(--color-gray-darker);
@@ -287,8 +288,10 @@ li + li {
 }
 
 .hero__text {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   letter-spacing: 0.05rem;
+  margin: 2rem auto;
+  max-width: 60rem;
 }
 
 .hero__button {
@@ -301,6 +304,13 @@ li + li {
   letter-spacing: 0.1rem;
   margin-bottom: 2rem;
   text-align: center;
+}
+
+.footnote-marker::after {
+  color: var(--color-scarlet);
+  content: "*";
+  font-weight: normal;
+  font-size: 1.6rem;
 }
 
 /* about */
@@ -484,6 +494,11 @@ li + li {
   filter: invert(1);
 }
 
+.main-footer__location {
+  filter: invert(1);
+  vertical-align: middle;
+}
+
 @media screen and (min-width:768px) {
   .sidebar {
     align-items: center;
@@ -546,6 +561,10 @@ li + li {
 
   .hero {
     aspect-ratio: 16 / 9;
+  }
+
+  .hero__text {
+    font-size: 1.8rem;
   }
 
   .about,
