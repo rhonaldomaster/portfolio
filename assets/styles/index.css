@@ -256,25 +256,26 @@ li + li {
   filter: invert(1);
 }
 
-.main {
-  padding: 0 2rem;
-}
-
 /* hero */
 .hero {
-  aspect-ratio: 1;
   background-attachment: fixed;
   background-color: var(--color-dark);
   background-image: url(../images/negative-space-css-syntax-code.jpg);
   background-size: cover;
   color: var(--color-light);
+  display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  height: 100vw;
   justify-content: center;
-  margin: 0 -2rem;
-  padding: 2rem;
+  padding: 0 2rem;
   text-align: center;
+
+  @supports (aspect-ratio: 1) {
+    aspect-ratio: 1;
+    height: auto;
+  }
 
   @supports (background-image: url(../images/negative-space-css-syntax-code.webp)) {
     background-image: url(../images/negative-space-css-syntax-code.webp);
@@ -315,7 +316,7 @@ li + li {
 
 /* about */
 .about {
-  padding-top: 2rem;
+  padding: 2rem 2rem 0;
 }
 
 .about__stack {
@@ -374,7 +375,7 @@ li + li {
 
 /* work experience */
 .work-experience {
-  padding-top: 2rem;
+  padding: 2rem 2rem 0;
 }
 
 .work-experience__projects dd {
@@ -424,12 +425,12 @@ li + li {
 
 /* education */
 .education {
-  padding: 2rem 0;
+  padding: 2rem;
 }
 
 /* tech talks */
 .tech-talks {
-  padding: 3rem 0;
+  padding: 2rem;
 }
 
 .tech-talks__list {
@@ -556,11 +557,12 @@ li + li {
 
   .main {
     margin-left: 20rem;
-    padding-top: 0;
   }
 
   .hero {
-    aspect-ratio: 16 / 9;
+    @supports (aspect-ratio: 16 / 9) {
+      aspect-ratio: 16 / 9;
+    }
   }
 
   .hero__text {

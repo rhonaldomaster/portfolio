@@ -28,7 +28,13 @@ function showActiveMenuLink() {
 function toggleSidebar(button) {
   const sidebar = document.querySelector('.js-aside');
   const sidebarNavigation = document.querySelector('.js-sidebar-navigation');
+
   sidebar.classList.toggle('sidebar--open');
+  if (sidebar.classList.contains('sidebar--open')) {
+    bodyScrollLock.disableBodyScroll(sidebar);
+  } else {
+    bodyScrollLock.enableBodyScroll(sidebar);
+  }
   sidebarNavigation.classList.toggle('sidebar__navigation--visible');
 
   if (button) {
@@ -56,7 +62,7 @@ function addSidebarObserver() {
   });
 }
 
-function handleIntersection(entries, observer) {
+function handleIntersection(entries) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const currentSectionId = entry.target.id;
