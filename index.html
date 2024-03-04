@@ -41,8 +41,8 @@
 </head>
 
 <body>
-  <a href="#main" class="sr-only">Skip to main content</a>
   <h1 class="sr-only">Rhonalf's portfolio content</h1>
+  <a href="#main" class="sr-only">Skip to main content</a>
 
   <aside class="sidebar js-aside" aria-labelledby="sidebar-title">
     <h2 id="sidebar-title" class="sr-only">Menu</h2>
@@ -77,6 +77,7 @@
             <a
               href="./"
               class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link sidebar__navigation-menu-link--active"
+              aria-current="page"
             >Home</a>
           </li>
           <li>
@@ -105,6 +106,11 @@
           </li>
         </ul>
       </nav>
+      <address class="sidebar__current-location">
+        <img class="sidebar__current-location-icon" src="./assets/images/location-pin.svg" alt="" height="30" width="30" loading="lazy">
+        <span class="sr-only">Rhonalf is located in&nbsp;</span>
+        Barranquilla, <abbr title="Colombia">CO</abbr>
+      </address>
       <nav class="sidebar__links-navigation" aria-labelledby="navigation-social-title">
         <h3 id="navigation-social-title" class="sr-only">Social networks and other sites</h3>
         <ul class="sidebar__links unstyled-list" role="list">
@@ -166,99 +172,102 @@
 
     <section id="about" class="about">
       <h2 class="section-title">About me</h2>
-      <p class="about__text">I am a Computer Science Engineer with <span class="js-experience-years">15</span> years of extensive experience in web development and information systems design. My expertise lies in front-end web development, where I have honed my skills in HTML, CSS, JavaScript, PHP, and Ruby on Rails.</p>
-      <p class="about__text">Throughout my career, I have successfully undertaken the design, implementation, and support of various projects. My proficiency extends to working with WordPress themes and plugins, as well as Shopify themes. Additionally, I am an adept open-source software developer, contributing to the collaborative growth of the community.</p>
-      <h3 class="about__subtitle">Some of my repositories</h3>
-      <ul role="list">
-        <li>
-          <a
-            href="https://github.com/rhonaldomaster/openair-k-colors"
-            target="_blank" rel="noopener noreferrer"
-          >Styles and functions for Koombea's OpenAir dashboard</a>
-          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-          <p>
+      <p class="about__text">I am a Computer Science Engineer with <span class="js-experience-years">15</span> years of extensive experience in web development and information systems design. My expertise lies in front-end web development, where I have honed my skills in <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>, JavaScript, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, and Ruby on Rails.</p>
+      <p class="about__text">Throughout my career, I have successfully undertaken the design, implementation, and support of various projects. My proficiency extends to working with WordPress themes and plugins, as well as Shopify themes. Embracing the principles of web accessibility, I am dedicated to creating digital experiences that are not only visually stunning but also universally accessible. Additionally, I am an adept open-source software developer, contributing to the collaborative growth of the community.</p>
+      <div class="about__links">
+        <h3 class="about__subtitle">Some of my repositories</h3>
+        <ul role="list">
+          <li>
             <a
-              href="https://greasyfork.org/en/scripts/486690-koombea-openair-styles"
+              href="https://github.com/rhonaldomaster/openair-k-colors"
               target="_blank" rel="noopener noreferrer"
-            >Install the styles from Greasyfork</a>
+            >Styles and functions for Koombea's OpenAir dashboard</a>
             <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-          </p>
-          <p>
+            <p>
+              <a
+                href="https://greasyfork.org/en/scripts/486690-koombea-openair-styles"
+                target="_blank" rel="noopener noreferrer"
+              >Install the styles from Greasyfork</a>
+              <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+            </p>
+            <p>
+              <a
+                href="https://greasyfork.org/en/scripts/482700-koombea-openair-functions"
+                target="_blank" rel="noopener noreferrer"
+              >Install the functions from Greasyfork</a>
+              <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+            </p>
+          </li>
+          <li>
             <a
-              href="https://greasyfork.org/en/scripts/482700-koombea-openair-functions"
+              href="https://github.com/rhonaldomaster/multifile"
               target="_blank" rel="noopener noreferrer"
-            >Install the functions from Greasyfork</a>
+            >rzscript: adds features to ManagerZone's website (online manager game)</a>
             <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-          </p>
-        </li>
-        <li>
-          <a
-            href="https://github.com/rhonaldomaster/multifile"
-            target="_blank" rel="noopener noreferrer"
-          >rzscript: adds features to ManagerZone's website (online manager game)</a>
-          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-          <p>
+            <p>
+              <a
+                href="https://greasyfork.org/en/scripts/482697-rzscript"
+                target="_blank" rel="noopener noreferrer"
+              >Install it from Greasyfork</a>
+              <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+            </p>
+          </li>
+          <li>
             <a
-              href="https://greasyfork.org/en/scripts/482697-rzscript"
+              href="https://github.com/rhonaldomaster/multifile"
               target="_blank" rel="noopener noreferrer"
-            >Install it from Greasyfork</a>
+            >Multi images ajax uploader</a>
             <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-          </p>
-        </li>
-        <li>
-          <a
-            href="https://github.com/rhonaldomaster/multifile"
-            target="_blank" rel="noopener noreferrer"
-          >Multi images ajax uploader</a>
-          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-        </li>
-        <li>
-          <a
-            href="https://github.com/rhonaldomaster/shopi-json-search"
-            target="_blank" rel="noopener noreferrer"
-          >Ajax search in shopify</a>
-          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-        </li>
-      </ul>
-      <h3 class="about__subtitle">Some links</h3>
-      <ul role="list">
-        <li>
-          <a
-            href="https://twitter.com/rhonaldomaster"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View on X"
-          >X</a>
-          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-        </li>
-        <li>
-          <a
-            href="https://github.com/rhonaldomaster"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View on GitHub"
-          >GitHub</a>
-          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-        </li>
-        <li>
-          <a
-            href="https://co.linkedin.com/in/rhonalf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View on LinkedIn"
-          >LinkedIn</a>
-          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-        </li>
-        <li>
-          <a
-            href="https://instagram.com/rhonalf_mv"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View on Instagram"
-          >Instagram</a>
-          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-        </li>
-      </ul>
+          </li>
+          <li>
+            <a
+              href="https://github.com/rhonaldomaster/shopi-json-search"
+              target="_blank" rel="noopener noreferrer"
+            >Ajax search in shopify</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+          </li>
+        </ul>
+
+        <h3 class="about__subtitle">Some links</h3>
+        <ul role="list">
+          <li>
+            <a
+              href="https://twitter.com/rhonaldomaster"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View on X"
+            >X</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+          </li>
+          <li>
+            <a
+              href="https://github.com/rhonaldomaster"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View on GitHub"
+            >GitHub</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+          </li>
+          <li>
+            <a
+              href="https://co.linkedin.com/in/rhonalf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View on LinkedIn"
+            >LinkedIn</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+          </li>
+          <li>
+            <a
+              href="https://instagram.com/rhonalf_mv"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View on Instagram"
+            >Instagram</a>
+            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+          </li>
+        </ul>
+      </div>
       <h3 class="about__subtitle">Tech stack</h3>
       <p class="about__text">
         Disclaimer:
@@ -268,19 +277,19 @@
       <ul class="unstyled-list about__stack-list" role="list">
         <li class="about__stack">
           <label class="about__stack-label" for="html-progress">HTML</label>
-          <progress class="rating-progress" id="html-progress" max="100" value="90">90%</progress>
+          <progress class="rating-progress" id="html-progress" max="100" value="80">80%</progress>
         </li>
         <li class="about__stack">
           <label class="about__stack-label" for="css-progress">CSS</label>
-          <progress class="rating-progress" id="css-progress" max="100" value="80">80%</progress>
+          <progress class="rating-progress" id="css-progress" max="100" value="70">70%</progress>
         </li>
-        <li class="about__stack-tech">
-          <h4 class="about__stack-tech-title">JavaScript</h4>
+        <li class="about__stack-tech" aria-labelledby="js-tech-stack">
+          <h4 id="js-tech-stack" class="about__stack-tech-title">JavaScript</h4>
           <p class="about__text">Known frameworks and/or libraries</p>
           <ul class="unstyled-list" role="list">
             <li class="about__stack">
-              <label class="about__stack-label" for="vanilla-progress">Vanilla JavaScript</label>
-              <progress class="rating-progress" id="vanilla-progress" max="100" value="70">70%</progress>
+              <label class="about__stack-label" for="vanilla-progress">JavaScript</label>
+              <progress class="rating-progress" id="vanilla-progress" max="100" value="75">75%</progress>
             </li>
             <li class="about__stack">
               <label class="about__stack-label" for="jquery-progress">jQuery</label>
@@ -304,10 +313,14 @@
             </li>
           </ul>
         </li>
-        <li class="about__stack-tech">
-          <h4 class="about__stack-tech-title">PHP</h4>
+        <li class="about__stack-tech" aria-labelledby="php-tech-stack">
+          <h4 id="php-tech-stack" class="about__stack-tech-title">PHP</h4>
           <p class="about__text">Known frameworks and/or libraries</p>
           <ul class="unstyled-list" role="list">
+            <li class="about__stack">
+              <label class="about__stack-label" for="wordpress-progress">PHP</label>
+              <progress class="rating-progress" id="wordpress-progress" max="100" value="80">80%</progress>
+            </li>
             <li class="about__stack">
               <label class="about__stack-label" for="wordpress-progress">WordPress</label>
               <progress class="rating-progress" id="wordpress-progress" max="100" value="80">80%</progress>
@@ -318,18 +331,22 @@
             </li>
           </ul>
         </li>
-        <li class="about__stack-tech">
-          <h4 class="about__stack-tech-title">Ruby</h4>
+        <li class="about__stack-tech" aria-labelledby="ruby-tech-stack">
+          <h4 id="ruby-tech-stack" class="about__stack-tech-title">Ruby</h4>
           <p class="about__text">Known frameworks and/or libraries</p>
           <ul class="unstyled-list" role="list">
+            <li class="about__stack">
+              <label class="about__stack-label" for="ruby-on-rails-progress">Ruby</label>
+              <progress class="rating-progress" id="ruby-on-rails-progress" max="100" value="50">40%</progress>
+            </li>
             <li class="about__stack">
               <label class="about__stack-label" for="ruby-on-rails-progress">Ruby on Rails</label>
               <progress class="rating-progress" id="ruby-on-rails-progress" max="100" value="50">50%</progress>
             </li>
           </ul>
         </li>
-        <li class="about__stack-tech">
-          <h4 class="about__stack-tech-title">Shopify</h4>
+        <li class="about__stack-tech" aria-labelledby="shopify-tech-stack">
+          <h4 id="shopify-tech-stack" class="about__stack-tech-title">Shopify</h4>
           <p class="about__text">Known APIs</p>
           <ul class="unstyled-list" role="list">
             <li class="about__stack">
@@ -354,21 +371,17 @@
             </li>
           </ul>
         </li>
-        <li class="about__stack-tech">
-          <h4 class="about__stack-tech-title">Databases</h4>
+        <li class="about__stack-tech" aria-labelledby="dtabases-tech-stack">
+          <h4 id="dtabases-tech-stack" class="about__stack-tech-title">Databases</h4>
           <p class="about__text">Known databases</p>
           <ul class="unstyled-list" role="list">
             <li class="about__stack">
-              <label class="about__stack-label" for="mysql-progress">MySQL</label>
-              <progress class="rating-progress" id="mysql-progress" max="100" value="70">70%</progress>
-            </li>
-            <li class="about__stack">
-              <label class="about__stack-label" for="mariadb-progress">MariaDB</label>
-              <progress class="rating-progress" id="mariadb-progress" max="100" value="70">70%</progress>
+              <label class="about__stack-label" for="mysql-progress">MySQL / MariaDB</label>
+              <progress class="rating-progress" id="mysql-progress" max="100" value="50">50%</progress>
             </li>
             <li class="about__stack">
               <label class="about__stack-label" for="postgresql-progress">PostgreSQL</label>
-              <progress class="rating-progress" id="postgresql-progress" max="100" value="50">50%</progress>
+              <progress class="rating-progress" id="postgresql-progress" max="100" value="30">30%</progress>
             </li>
           </ul>
         </li>
@@ -827,7 +840,7 @@
       <h2 class="section-title">Education</h2>
       <h3>Bachelor's degree</h3>
       <ul>
-        <li><strong>Systems engineer</strong>: Universidad del Norte, 2009. Barranquilla, CO.</li>
+        <li><strong>Systems engineer</strong>: Universidad del Norte, 2009. Barranquilla, <abbr title="Colombia">CO</abbr>.</li>
       </ul>
       <h3>Languages</h3>
       <ul>
@@ -843,7 +856,10 @@
 
   <footer class="main-footer">
     <h2 class="main-footer__title">Contact me</h2>
-    <p><img class="main-footer__location" src="./assets/images/location-pin.svg" alt="" height="40" width="40" loading="lazy"> Barranquilla, CO</p>
+    <p>
+      <img class="main-footer__location" src="./assets/images/location-pin.svg" alt="" height="40" width="40" loading="lazy">
+      Barranquilla, <abbr title="Colombia">CO</abbr>
+    </p>
     <ul class="unstyled-list main-footer__links" role="list">
       <li>
         <a

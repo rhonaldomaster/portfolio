@@ -25,7 +25,7 @@ function showActiveMenuLink() {
   });
 }
 
-function toggleSidebar(button) {
+function toggleSidebar(button = null) {
   const sidebar = document.querySelector('.js-aside');
   const sidebarNavigation = document.querySelector('.js-sidebar-navigation');
 
@@ -53,7 +53,7 @@ function addSidebarObserver() {
   const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.1
+    threshold: 0.15
   };
   const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
@@ -71,16 +71,19 @@ function handleIntersection(entries) {
   });
 }
 
-function updateActiveLink(currentSectionId) {
+function updateActiveLink(currentSectionId = '') {
   const activeClassName = 'sidebar__navigation-menu-link--active';
   const sidebarLinks = document.querySelectorAll('.js-sidebar-navigation-menu-link');
 
   sidebarLinks.forEach(link => {
     link.classList.remove(activeClassName);
-    if (link.getAttribute('href') === `#${currentSectionId}`) {
+    link.setAttribute('aria-current', false);
+
+    const isHeroLink = link.getAttribute('href') === './' && currentSectionId === 'hero';
+
+    if (link.getAttribute('href') === `#${currentSectionId}` || isHeroLink) {
       link.classList.add(activeClassName);
-    } else if (link.getAttribute('href') === './' && currentSectionId === 'hero') {
-      link.classList.add(activeClassName);
+      link.setAttribute('aria-current', 'page');
     }
   });
 }
