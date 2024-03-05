@@ -27,13 +27,42 @@
   <link rel="apple-touch-icon" href="./assets/images/avatar-400.jpg">
   <link rel="shortcut icon" href="./assets/images/avatar-200.jpg" type="image/x-icon">
 
+  <link rel="preload" fetchpriority="high" as="image" href="./assets/images/negative-space-css-syntax-code.webp" type="image/webp">
   <link rel="preload" fetchpriority="high" as="style" href="./assets/styles/normalize.css" type="text/css">
   <link rel="preload" fetchpriority="high" as="style" href="./assets/styles/index.css" type="text/css">
-  <link rel="preload" fetchpriority="high" as="image" href="./assets/images/negative-space-css-syntax-code.webp" type="image/webp">
+  <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/Lato-Regular.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/Lato-Bold.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/Lato-Italic.woff2" crossorigin>
+  <link rel="preload" as="style" href="./assets/styles/hamburgers.css" onload="this.onload=null;this.rel='stylesheet';this.removeAttribute('as')">
 
   <title>Rhonalf's portfolio</title>
+
+  <style>
+    @font-face {
+      font-family: 'Lato';
+      src: url('./assets/fonts/Lato-Italic.woff2') format('woff2');
+      font-weight: normal;
+      font-style: italic;
+      font-display: optional;
+    }
+
+    @font-face {
+      font-family: 'Lato';
+      src: url('./assets/fonts/Lato-Bold.woff2') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+      font-display: optional;
+    }
+
+    @font-face {
+      font-family: 'Lato';
+      src: url('./assets/fonts/Lato-Regular.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+      font-display: optional;
+    }
+  </style>
   <link rel="stylesheet" href="./assets/styles/normalize.css">
-  <link rel="preload" as="style" href="./assets/styles/hamburgers.css" onload="this.onload=null;this.rel='stylesheet';this.removeAttribute('as')">
   <noscript>
     <link rel="stylesheet" href="./assets/styles/hamburgers.css">
   </noscript>
@@ -41,13 +70,15 @@
 </head>
 
 <body>
-  <h1 class="sr-only">Rhonalf's portfolio content</h1>
-  <a href="#main" class="sr-only">Skip to main content</a>
+  <header>
+    <h1 class="sr-only">Rhonalf's portfolio content</h1>
+    <a href="#main" class="sr-only">Skip to main content</a>
+  </header>
 
   <aside class="sidebar js-aside" aria-labelledby="sidebar-title">
     <h2 id="sidebar-title" class="sr-only">Menu</h2>
     <picture>
-      <source srcset="./assets/images/avatar-200.webp, ./assets/images/avatar-400.webp 2x">
+      <source srcset="./assets/images/avatar-200.webp, ./assets/images/avatar-400.webp 2x" type="image/webp">
       <img
         src="./assets/images/avatar-200.jpg"
         srcset="./assets/images/avatar-400.jpg 2x"
@@ -71,8 +102,8 @@
     </button>
     <div id="main-menu" class="sidebar__navigation js-sidebar-navigation">
       <nav class="sidebar__menu" aria-labelledby="main-navigation-title">
-        <h3 id="main-navigation-title" class="sr-only">Section links</h3>
-        <ul class="unstyled-list" role="list">
+        <p id="main-navigation-title" class="sr-only">Section links</p>
+        <ul class="unstyled-list">
           <li>
             <a
               href="./"
@@ -88,15 +119,21 @@
           </li>
           <li>
             <a
+              href="#tech-stack"
+              class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
+            >Tech Stack</a>
+          </li>
+          <li>
+            <a
               href="#work-experience"
               class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
-              >Work experience</a>
+              >Work Experience</a>
           </li>
           <li>
             <a
               href="#tech-talks"
               class="js-sidebar-navigation-menu-link sidebar__navigation-menu-link"
-            >Tech talks</a>
+            >Tech Talks</a>
           </li>
           <li>
             <a
@@ -112,8 +149,8 @@
         Barranquilla, <abbr title="Colombia">CO</abbr>
       </address>
       <nav class="sidebar__links-navigation" aria-labelledby="navigation-social-title">
-        <h3 id="navigation-social-title" class="sr-only">Social networks and other sites</h3>
-        <ul class="sidebar__links unstyled-list" role="list">
+        <p id="navigation-social-title" class="sr-only">Social networks and other sites</p>
+        <ul class="sidebar__links unstyled-list">
           <li>
             <a
               class="sidebar__links-link"
@@ -172,109 +209,107 @@
 
     <section id="about" class="about">
       <h2 class="section-title">About me</h2>
-      <p class="about__text">I am a Computer Science Engineer with <span class="js-experience-years">15</span> years of extensive experience in web development and information systems design. My expertise lies in front-end web development, where I have honed my skills in <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>, JavaScript, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, and Ruby on Rails.</p>
-      <p class="about__text">Throughout my career, I have successfully undertaken the design, implementation, and support of various projects. My proficiency extends to working with WordPress themes and plugins, as well as Shopify themes. Embracing the principles of web accessibility, I am dedicated to creating digital experiences that are not only visually stunning but also universally accessible. Additionally, I am an adept open-source software developer, contributing to the collaborative growth of the community.</p>
-      <div class="about__links">
-        <h3 class="about__subtitle">Some of my repositories</h3>
-        <ul role="list">
-          <li>
-            <a
-              href="https://github.com/rhonaldomaster/openair-k-colors"
-              target="_blank" rel="noopener noreferrer"
-            >Styles and functions for Koombea's OpenAir dashboard</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-            <p>
+      <ul class="about__container">
+        <li class="about__container-columns" aria-labelledby="about-profile">
+          <h3 id="about-profile" class="about__card-subtitle">My profile</h3>
+          <p class="about__text">I am a Computer Science Engineer with <span class="js-experience-years">15</span> years of extensive experience in web development and information systems design. My expertise lies in front-end web development, where I have honed my skills in <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>, JavaScript, <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>, and Ruby on Rails.</p>
+          <p class="about__text">Throughout my career, I have successfully undertaken the design, implementation, and support of various projects. My proficiency extends to working with WordPress themes and plugins, as well as Shopify themes. Embracing the principles of web accessibility, I am dedicated to creating digital experiences that are not only visually stunning but also universally accessible. Additionally, I am an adept open-source software developer, contributing to the collaborative growth of the community.</p>
+        </li>
+        <li class="about__container-columns" aria-labelledby="about-repositories">
+          <h3 id="about-repositories" class="about__card-subtitle">Some of my repositories</h3>
+          <ul>
+            <li>
               <a
-                href="https://greasyfork.org/en/scripts/486690-koombea-openair-styles"
+                href="https://github.com/rhonaldomaster/openair-k-colors"
                 target="_blank" rel="noopener noreferrer"
-              >Install the styles from Greasyfork</a>
-              <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-            </p>
-            <p>
+              >Styles and functions for Koombea's OpenAir dashboard</a>
+              <p>
+                <a
+                  href="https://greasyfork.org/en/scripts/486690-koombea-openair-styles"
+                  target="_blank" rel="noopener noreferrer"
+                >Install the styles from Greasyfork</a>
+                or
+                <a
+                  href="https://greasyfork.org/en/scripts/482700-koombea-openair-functions"
+                  target="_blank" rel="noopener noreferrer"
+                >Install the functions from Greasyfork</a>
+              </p>
+            </li>
+            <li>
               <a
-                href="https://greasyfork.org/en/scripts/482700-koombea-openair-functions"
+                href="https://github.com/rhonaldomaster/multifile"
                 target="_blank" rel="noopener noreferrer"
-              >Install the functions from Greasyfork</a>
-              <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-            </p>
-          </li>
-          <li>
-            <a
-              href="https://github.com/rhonaldomaster/multifile"
-              target="_blank" rel="noopener noreferrer"
-            >rzscript: adds features to ManagerZone's website (online manager game)</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-            <p>
+              >rzscript: adds features to ManagerZone's website (online manager game)</a>
+              <p>
+                <a
+                  href="https://greasyfork.org/en/scripts/482697-rzscript"
+                  target="_blank" rel="noopener noreferrer"
+                >Install it from Greasyfork</a>
+              </p>
+            </li>
+            <li>
               <a
-                href="https://greasyfork.org/en/scripts/482697-rzscript"
+                href="https://github.com/rhonaldomaster/multifile"
                 target="_blank" rel="noopener noreferrer"
-              >Install it from Greasyfork</a>
-              <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-            </p>
-          </li>
-          <li>
-            <a
-              href="https://github.com/rhonaldomaster/multifile"
-              target="_blank" rel="noopener noreferrer"
-            >Multi images ajax uploader</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-          </li>
-          <li>
-            <a
-              href="https://github.com/rhonaldomaster/shopi-json-search"
-              target="_blank" rel="noopener noreferrer"
-            >Ajax search in shopify</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-          </li>
-        </ul>
+              >Multi images ajax uploader</a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/rhonaldomaster/shopi-json-search"
+                target="_blank" rel="noopener noreferrer"
+              >Ajax search in shopify</a>
+            </li>
+          </ul>
+        </li>
+        <li class="about__container-columns" aria-labelledby="about-links">
+          <h3 id="about-links" class="about__card-subtitle">Some links</h3>
+          <ul>
+            <li>
+              <a
+                href="https://twitter.com/rhonaldomaster"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View on X"
+              >X</a>
+            </li>
+            <li>
+              <a
+                href="https://github.com/rhonaldomaster"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View on GitHub"
+              >GitHub</a>
+            </li>
+            <li>
+              <a
+                href="https://co.linkedin.com/in/rhonalf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View on LinkedIn"
+              >LinkedIn</a>
+            </li>
+            <li>
+              <a
+                href="https://instagram.com/rhonalf_mv"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View on Instagram"
+              >Instagram</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
 
-        <h3 class="about__subtitle">Some links</h3>
-        <ul role="list">
-          <li>
-            <a
-              href="https://twitter.com/rhonaldomaster"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View on X"
-            >X</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-          </li>
-          <li>
-            <a
-              href="https://github.com/rhonaldomaster"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View on GitHub"
-            >GitHub</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-          </li>
-          <li>
-            <a
-              href="https://co.linkedin.com/in/rhonalf"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View on LinkedIn"
-            >LinkedIn</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-          </li>
-          <li>
-            <a
-              href="https://instagram.com/rhonalf_mv"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View on Instagram"
-            >Instagram</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
-          </li>
-        </ul>
-      </div>
-      <h3 class="about__subtitle">Tech stack</h3>
+    <section id="tech-stack" class="about">
+      <h2 class="section-title">Tech Stack</h2>
+      <p class="about__text">This is the combination of technologies, tools, programming languages, frameworks, and software products that I'm familiar with or have experience using.</p>
       <p class="about__text">
         Disclaimer:
         <em>The following ratings are subjective, based on my personal opinions and experiences, and may not accurately reflect objective knowledge levels.</em>
         Ratings are presented on a scale from zero to one hundred percent.
       </p>
-      <ul class="unstyled-list about__stack-list" role="list">
+      <ul class="unstyled-list about__stack-list">
         <li class="about__stack">
           <label class="about__stack-label" for="html-progress">HTML</label>
           <progress class="rating-progress" id="html-progress" max="100" value="80">80%</progress>
@@ -284,9 +319,9 @@
           <progress class="rating-progress" id="css-progress" max="100" value="70">70%</progress>
         </li>
         <li class="about__stack-tech" aria-labelledby="js-tech-stack">
-          <h4 id="js-tech-stack" class="about__stack-tech-title">JavaScript</h4>
+          <h3 id="js-tech-stack" class="about__stack-tech-title">JavaScript</h3>
           <p class="about__text">Known frameworks and/or libraries</p>
-          <ul class="unstyled-list" role="list">
+          <ul class="unstyled-list">
             <li class="about__stack">
               <label class="about__stack-label" for="vanilla-progress">JavaScript</label>
               <progress class="rating-progress" id="vanilla-progress" max="100" value="75">75%</progress>
@@ -314,12 +349,12 @@
           </ul>
         </li>
         <li class="about__stack-tech" aria-labelledby="php-tech-stack">
-          <h4 id="php-tech-stack" class="about__stack-tech-title">PHP</h4>
+          <h3 id="php-tech-stack" class="about__stack-tech-title">PHP</h3>
           <p class="about__text">Known frameworks and/or libraries</p>
-          <ul class="unstyled-list" role="list">
+          <ul class="unstyled-list">
             <li class="about__stack">
-              <label class="about__stack-label" for="wordpress-progress">PHP</label>
-              <progress class="rating-progress" id="wordpress-progress" max="100" value="80">80%</progress>
+              <label class="about__stack-label" for="php-progress">PHP</label>
+              <progress class="rating-progress" id="php-progress" max="100" value="80">80%</progress>
             </li>
             <li class="about__stack">
               <label class="about__stack-label" for="wordpress-progress">WordPress</label>
@@ -332,12 +367,12 @@
           </ul>
         </li>
         <li class="about__stack-tech" aria-labelledby="ruby-tech-stack">
-          <h4 id="ruby-tech-stack" class="about__stack-tech-title">Ruby</h4>
+          <h3 id="ruby-tech-stack" class="about__stack-tech-title">Ruby</h3>
           <p class="about__text">Known frameworks and/or libraries</p>
-          <ul class="unstyled-list" role="list">
+          <ul class="unstyled-list">
             <li class="about__stack">
-              <label class="about__stack-label" for="ruby-on-rails-progress">Ruby</label>
-              <progress class="rating-progress" id="ruby-on-rails-progress" max="100" value="50">40%</progress>
+              <label class="about__stack-label" for="ruby-progress">Ruby</label>
+              <progress class="rating-progress" id="ruby-progress" max="100" value="50">40%</progress>
             </li>
             <li class="about__stack">
               <label class="about__stack-label" for="ruby-on-rails-progress">Ruby on Rails</label>
@@ -346,9 +381,9 @@
           </ul>
         </li>
         <li class="about__stack-tech" aria-labelledby="shopify-tech-stack">
-          <h4 id="shopify-tech-stack" class="about__stack-tech-title">Shopify</h4>
+          <h3 id="shopify-tech-stack" class="about__stack-tech-title">Shopify</h3>
           <p class="about__text">Known APIs</p>
-          <ul class="unstyled-list" role="list">
+          <ul class="unstyled-list">
             <li class="about__stack">
               <label class="about__stack-label" for="liquid-progress">Liquid API</label>
               <progress class="rating-progress" id="liquid-progress" max="100" value="85">85%</progress>
@@ -372,9 +407,9 @@
           </ul>
         </li>
         <li class="about__stack-tech" aria-labelledby="dtabases-tech-stack">
-          <h4 id="dtabases-tech-stack" class="about__stack-tech-title">Databases</h4>
+          <h3 id="dtabases-tech-stack" class="about__stack-tech-title">Databases</h3>
           <p class="about__text">Known databases</p>
-          <ul class="unstyled-list" role="list">
+          <ul class="unstyled-list">
             <li class="about__stack">
               <label class="about__stack-label" for="mysql-progress">MySQL / MariaDB</label>
               <progress class="rating-progress" id="mysql-progress" max="100" value="50">50%</progress>
@@ -389,7 +424,7 @@
     </section>
 
     <section id="work-experience" class="work-experience">
-      <h2 class="section-title">Work experience</h2>
+      <h2 class="section-title">Work Experience</h2>
       <article class="work-experience__company">
         <h3 class="work-experience__company-title">Koombea</h3>
         <dl>
@@ -399,7 +434,7 @@
           <dd><time datetime="2016-03-02">2016-03-02</time> to <time class="js-today-date" datetime="2024-02-21">current date</time></dd>
         </dl>
         <h4 class="work-experience__subtitle">Responsibilities:</h4>
-        <ul role="list">
+        <ul>
           <li>Lead the end-to-end development and maintenance of company websites, ensuring optimal functionality, user experience, and responsiveness.</li>
           <li>Implement strategic updates and improvements to enhance site performance and align with industry best practices.</li>
           <li>Collaborate with cross-functional teams to integrate new features and technologies, contributing to a seamless online presence.</li>
@@ -408,7 +443,7 @@
           <li>Serve as a mentor to interns and colleagues, fostering a collaborative and knowledge-sharing environment.</li>
         </ul>
         <h4 class="work-experience__subtitle">Technologies:</h4>
-        <ul role="list">
+        <ul>
           <li>HTML</li>
           <li>CSS</li>
           <li>JavaScript: vanilla, ReactJS, VueJS, jQuery</li>
@@ -423,7 +458,6 @@
           <dd>
             <p>Digital product development company. Worked on some of their online store projects in Shopify.
               <a href="https://www.halfhelix.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-              <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
             </p>
             <details class="custom-details">
               <summary class="button button--details">View project list here</summary>
@@ -432,85 +466,71 @@
                 <dd>
                   Cosmetics online store (Shopify with Lit web components).
                   <a href="https://buxomcosmetics.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">bareMinerals</dt>
                 <dd>
                   Cosmetics online store (Shopify with Lit web components).
                   <a href="https://bareminerals.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Laura Mercier</dt>
                 <dd>
                   Cosmetics online store (Shopify with Lit web components).
                   <a href="https://lauramercier.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Schleich USA</dt>
                 <dd>
                   Producer of hand painted toy figurines and accessories (Shopify with Lit web components).
                   <a href="https://us.schleich-s.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Rothy's</dt>
                 <dd>
                   Men's and women's shoes and bags (Shopify with VueJS 2).
                   <a href="https://rothys.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Paravel</dt>
                 <dd>
                   Sustainable Luggage, Bags, & Travel Accessories (Shopify with web components).
                   <a href="https://tourparavel.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Floyd Home</dt>
                 <dd>
                   Furniture store (Shopify with web components).
                   <a href="https://floydhome.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Peloton Apparel</dt>
                 <dd>
                   Fitness Apparel & Athletic Wear (Shopify with VueJS 2).
                   <a href="https://apparel.onepeloton.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Khaite</dt>
                 <dd>
                   Clothing and accessories for women (Shopify with VueJS 2).
                   <a href="https://khaite.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Soludos</dt>
                 <dd>
                   Casual footwear and accessories (Shopify with VueJS 2).
                   <a href="https://soludos.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Ulla Johnson</dt>
                 <dd>
                   Clothing, shoes & accessories (Shopify with VueJS 2).
                   <a href="https://ullajohnson.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Fenty Beauty</dt>
                 <dd>
                   Cosmetics online store (Shopify with VueJS 2).
                   <a href="https://fentybeauty.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Naadam</dt>
                 <dd>
                   Luxury knitwear online store (Shopify with VueJS 2).
                   <a href="https://naadam.co/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
                 <dt class="work-experience__client-project">Fathead</dt>
                 <dd>
                   Retailer of life-sized, precision-cut vinyl wall graphics and cutouts (Shopify with VueJS 2).
                   <a href="https://fathead.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-                  <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
                 </dd>
               </dl>
             </details>
@@ -520,90 +540,79 @@
           <dd>
             Sod and grass seed supplier's online store (Shopify).
             <a href="https://shop.supersod.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Evolution of Smooth (EOS)</dt>
           <dd>
             Beauty and skin care online store (Shopify).
             <a href="https://evolutionofsmooth.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Smart Sports</dt>
           <dd>
             News and podcast site. NBA and NFL news for Spanish speakers (WordPress).
             <a href="https://www.smartsports.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Linc Learning</dt>
           <dd>
             Educational resources company located in the US (WordPress).
             <a href="https://linclearning.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Muebles Jamar</dt>
           <dd>
             Furniture store located in Colombia (Shopify).
             <a href="https://www.jamar.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Do it Center</dt>
           <dd>
             Home goods store located in Panama (Shopify).
             <a href="https://www.doitcenter.com.pa/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
-          <dt class="work-experience__client">New Balance Panama<span class="footnote-marker" aria-labelledby="footnote-koombea-projects"></span></dt>
+          <dt class="work-experience__client">New Balance Panama<span class="footnote-marker" role="status" aria-labelledby="footnote-koombea-projects"></span></dt>
           <dd>
             Sports wear online store (Shopify).
             <a href="https://www.newbalance.com.pa/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
-          <dt class="work-experience__client">EPK<span class="footnote-marker" aria-labelledby="footnote-koombea-projects"></span></dt>
+          <dt class="work-experience__client">EPK<span class="footnote-marker" role="status" aria-labelledby="footnote-koombea-projects"></span></dt>
           <dd>
             Children's Wear Online Store (Shopify).
             <a href="https://www.epeka.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
-          <dt class="work-experience__client">Cachette Capital<span class="footnote-marker" aria-labelledby="footnote-koombea-projects"></span></dt>
+          <dt class="work-experience__client">Cachette Capital<span class="footnote-marker" role="status" aria-labelledby="footnote-koombea-projects"></span></dt>
           <dd>
             Venture capital company website (WordPress).
             <a href="https://www.cachettecapital.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Kreative</dt>
           <dd>
             Digital marketing agency website (WordPress).
             <a href="https://www.bekreative.co/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Saasler</dt>
           <dd>
             Service as a software company website (WordPress).
             <a href="https://www.saasler.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
 
           <dt class="work-experience__client">Koombea</dt>
           <dd>
             Digital product development company website (WordPress).
             <a href="https://www.koombea.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
-            <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
           </dd>
         </dl>
-        <p class="footnotes" id="footnote-koombea-projects" role="doc-footnote">
+        <em class="footnotes" id="footnote-koombea-projects" role="doc-footnote">
           <span class="footnote-marker"></span>Disclaimer: The technology stack of this/these site(s) may have undergone changes.
-        </p>
+        </em>
       </article>
+
       <article class="work-experience__company">
         <h3 class="work-experience__company-title">Procol de Colombia S.A</h3>
         <dl>
@@ -613,13 +622,13 @@
           <dd><time datetime="2011-08-01">2011-08-01</time> to <time datetime="2016-02-29">2016-02-29</time></dd>
         </dl>
         <h4 class="work-experience__subtitle">Responsibilities:</h4>
-        <ul role="list">
+        <ul>
           <li>Support and continuous development of the internal web application.</li>
           <li>Design and implement API integrations, contributing to the seamless flow of information between the internal system and external platforms.</li>
           <li>Implement database optimizations and regular updates to keep systems current with industry standards and best practices.</li>
         </ul>
         <h4 class="work-experience__subtitle">Technologies:</h4>
-        <ul role="list">
+        <ul>
           <li>HTML</li>
           <li>CSS</li>
           <li>JavaScript</li>
@@ -631,8 +640,9 @@
           <dt class="work-experience__client-project">Internal Management Web Application</dt>
           <dd>Led the initial implementation of the internal management web application, utilizing PHP for server-side functionality and MariaDB for database management.</dd>
         </dl>
-        <p>Disclaimer: The technology stack of this/these application(s) may have undergone changes.</p>
+        <em>Disclaimer: The technology stack of this/these application(s) may have undergone changes.</em>
       </article>
+
       <article class="work-experience__company">
         <h3 class="work-experience__company-title">I2B Technologies</h3>
         <dl>
@@ -642,12 +652,12 @@
           <dd><time datetime="2011-02-01">2011-02-01</time> to <time datetime="2011-05-31">2016-05-31</time></dd>
         </dl>
         <h4 class="work-experience__subtitle">Responsibilities:</h4>
-        <ul role="list">
+        <ul>
           <li>Collaborate with cross-functional teams to gather requirements, translating them into effective technical solutions for the internal web platform.</li>
           <li>Utilize REST APIs proficiently to establish robust communication channels with external systems, enhancing data exchange efficiency.</li>
         </ul>
         <h4 class="work-experience__subtitle">Technologies:</h4>
-        <ul role="list">
+        <ul>
           <li>Java</li>
           <li>MySQL</li>
         </ul>
@@ -656,8 +666,9 @@
           <dt class="work-experience__client-project">Entel's Web Application</dt>
           <dd>Contribute to the development and maintenance of Entel's web application, utilizing Java for the backend and MySQL for data management.</dd>
         </dl>
-        <p>Disclaimer: The technology stack of this/these application(s) may have undergone changes.</p>
+        <em>Disclaimer: The technology stack of this/these application(s) may have undergone changes.</em>
       </article>
+
       <article class="work-experience__company">
         <h3 class="work-experience__company-title">Geotech Solutions</h3>
         <dl>
@@ -667,13 +678,13 @@
           <dd><time datetime="2010-03-01">2010-03-01</time> to <time datetime="2011-01-31">2011-01-31</time></dd>
         </dl>
         <h4 class="work-experience__subtitle">Responsibilities:</h4>
-        <ul role="list">
+        <ul>
           <li>Server-side development of clients Web Applications.</li>
           <li>Proactively identified and resolved issues, implementing enhancements to optimize performance and user experience.</li>
           <li>Developed and executed backup and recovery procedures, safeguarding critical data and minimizing downtime.</li>
         </ul>
         <h4 class="work-experience__subtitle">Technologies:</h4>
-        <ul role="list">
+        <ul>
           <li>HTML</li>
           <li>CSS</li>
           <li>JavaScript</li>
@@ -685,8 +696,9 @@
           <dt class="work-experience__client-project">Fintra's Internal Management Web Application</dt>
           <dd>Led the development and enhancement of Fintra's internal management web application, resulting in a significant performance improvement. Implemented strategic optimizations to enhance user experience and streamline application functionality.</dd>
         </dl>
-        <p>Disclaimer: The technology stack of this/these application(s) may have undergone changes.</p>
+        <em>Disclaimer: The technology stack of this/these application(s) may have undergone changes.</em>
       </article>
+
       <article class="work-experience__company">
         <h3 class="work-experience__company-title">Fintra</h3>
         <dl>
@@ -696,7 +708,7 @@
           <dd><time datetime="2009-06-01">2009-06-01</time> to <time datetime="2010-02-28">2010-02-28</time></dd>
         </dl>
         <h4 class="work-experience__subtitle">Responsibilities:</h4>
-        <ul role="list">
+        <ul>
           <li>Server-side development of the Management Web Application.</li>
           <li>Develop report modules for the Management Web Application.</li>
           <li>Identify and resolve issues, implementing enhancements to optimize performance and user experience.</li>
@@ -704,7 +716,7 @@
           <li>Support and continuous development of the internal web application.</li>
         </ul>
         <h4 class="work-experience__subtitle">Technologies:</h4>
-        <ul role="list">
+        <ul>
           <li>HTML</li>
           <li>CSS</li>
           <li>JavaScript</li>
@@ -716,120 +728,142 @@
           <dt class="work-experience__client-project">Fintra's Internal Management Web Application</dt>
           <dd>Collaborated on the development and enhancement of Fintra's internal management web application. Contributed to key aspects of the project, focusing on creating reports modules.</dd>
         </dl>
-        <p>Disclaimer: The technology stack of this/these application(s) may have undergone changes.</p>
+        <em>Disclaimer: The technology stack of this/these application(s) may have undergone changes.</em>
       </article>
     </section>
 
     <section id="tech-talks" class="tech-talks">
       <h2 class="section-title">Tech Talks</h2>
       <ul class="unstyled-list tech-talks__list">
-        <li class="tech-talks__list-item">
-          <a
-            class="tech-talks__list-item-link"
-            href="https://youtu.be/Rizam0Mzsc8"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Accesibility and UX/UI trendings in 2023<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+        <li class="tech-talks__list-item" aria-labelledby="tech-talk-1">
+          <h3 id="tech-talk-1" class="tech-talks__list-item-heading">
+            <a
+              class="tech-talks__list-item-link"
+              href="https://youtu.be/Rizam0Mzsc8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Accesibility and UX/UI trendings in 2023</a>
+          </h3>
           <p>Tech talk for Koombea.</p>
           <time datetime="2023-04-13">April 13, 2023</time>
         </li>
-        <li class="tech-talks__list-item">
-          <a
-            class="tech-talks__list-item-link"
-            href="https://youtu.be/FKRHRmJSwFc"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Shopify theme customization<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+        <li class="tech-talks__list-item" aria-labelledby="tech-talk-2">
+          <h3 id="tech-talk-2" class="tech-talks__list-item-heading">
+            <a
+              class="tech-talks__list-item-link"
+              href="https://youtu.be/FKRHRmJSwFc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Shopify theme customization</a>
+          </h3>
           <p>Tech talk for Koombea.</p>
           <time datetime="2020-10-29">October 29, 2020</time>
         </li>
-        <li class="tech-talks__list-item">
-          <a
-            class="tech-talks__list-item-link"
-            href="https://www.meetup.com/wordpress-barranquilla/events/268856122/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >How to improve WordPress performance<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+        <li class="tech-talks__list-item" aria-labelledby="tech-talk-3">
+          <h3 id="tech-talk-3" class="tech-talks__list-item-heading">
+            <a
+              class="tech-talks__list-item-link"
+              href="https://www.meetup.com/wordpress-barranquilla/events/268856122/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >How to improve WordPress performance</a>
+          </h3>
           <p>Tech talk for WordPress Barranquilla group.</p>
           <time datetime="2020-04-18">April 18, 2020</time>
         </li>
-        <li class="tech-talks__list-item">
-          <a
-            class="tech-talks__list-item-link"
-            href="https://www.meetup.com/wordpress-barranquilla/events/266249767/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >What do Open Source and GPL license mean?<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+        <li class="tech-talks__list-item" aria-labelledby="tech-talk-4">
+          <h3 id="tech-talk-4" class="tech-talks__list-item-heading">
+            <a
+              class="tech-talks__list-item-link"
+              href="https://www.meetup.com/wordpress-barranquilla/events/266249767/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >What do Open Source and GPL license mean?</a>
+          </h3>
           <p>Tech talk for WordPress Barranquilla group.</p>
           <time datetime="2019-11-30">November 30, 2019</time>
         </li>
-        <li class="tech-talks__list-item">
-          <a
-            class="tech-talks__list-item-link"
-            href="https://www.meetup.com/wordpress-barranquilla/events/261349161/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Getting to know WordPress' REST API<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+        <li class="tech-talks__list-item" aria-labelledby="tech-talk-5">
+          <h3 id="tech-talk-5" class="tech-talks__list-item-heading">
+            <a
+              class="tech-talks__list-item-link"
+              href="https://www.meetup.com/wordpress-barranquilla/events/261349161/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Getting to know WordPress' REST API</a>
+          </h3>
           <p>Tech talk for WordPress Barranquilla group.</p>
           <time datetime="2019-05-25">May 25, 2019</time>
         </li>
-        <li class="tech-talks__list-item">
-          <a
-            class="tech-talks__list-item-link"
-            href="https://www.meetup.com/wordpress-barranquilla/events/255803415/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >AJAX in WordPress<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+        <li class="tech-talks__list-item" aria-labelledby="tech-talk-6">
+          <h3 id="tech-talk-6" class="tech-talks__list-item-heading">
+            <a
+              class="tech-talks__list-item-link"
+              href="https://www.meetup.com/wordpress-barranquilla/events/255803415/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >AJAX in WordPress</a>
+          </h3>
           <p>Tech talk for Barranquilla Open Source enthusiasts.</p>
           <time datetime="2018-11-24">November 24, 2018</time>
         </li>
-        <li class="tech-talks__list-item">
-          <a
-            class="tech-talks__list-item-link"
-            href="https://2018.bogota.wordcamp.org/session/wordpress-gym-tips-para-mejorar-el-desarrollo-de-temas/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >WordPress gym<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+        <li class="tech-talks__list-item" aria-labelledby="tech-talk-7">
+          <h3 id="tech-talk-7" class="tech-talks__list-item-heading">
+            <a
+              class="tech-talks__list-item-link"
+              href="https://2018.bogota.wordcamp.org/session/wordpress-gym-tips-para-mejorar-el-desarrollo-de-temas/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >WordPress gym</a>
+          </h3>
           <p>Tech talk for WordCamp Bogota.</p>
           <time datetime="2018-11-10">November 10, 2018</time>
         </li>
-        <li class="tech-talks__list-item">
-          <a
-            class="tech-talks__list-item-link"
-            href="https://www.meetup.com/wordpress-barranquilla/events/245921270/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >AJAX for WordPress: how to use it correctly<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+        <li class="tech-talks__list-item" aria-labelledby="tech-talk-8">
+          <h3 id="tech-talk-8" class="tech-talks__list-item-heading">
+            <a
+              class="tech-talks__list-item-link"
+              href="https://www.meetup.com/wordpress-barranquilla/events/245921270/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >AJAX for WordPress: how to use it correctly</a>
+          </h3>
           <p>Tech talk for WordPress Barranquilla.</p>
           <time datetime="2017-12-21">December 21, 2017</time>
         </li>
-        <li class="tech-talks__list-item">
-          <a
-            class="tech-talks__list-item-link"
-            href="https://www.meetup.com/wordpress-barranquilla/events/243491395/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >WordPress' plugins? No, shortcodes<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+        <li class="tech-talks__list-item" aria-labelledby="tech-talk-9">
+          <h3 id="tech-talk-9" class="tech-talks__list-item-heading">
+            <a
+              class="tech-talks__list-item-link"
+              href="https://www.meetup.com/wordpress-barranquilla/events/243491395/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >WordPress' plugins? No, shortcodes</a>
+          </h3>
           <p>Tech talk for WordPress Barranquilla.</p>
           <time datetime="2017-10-04">October 04, 2017</time>
         </li>
-        <li class="tech-talks__list-item">
-          <a
-            class="tech-talks__list-item-link"
-            href="https://2017.bogota.wordcamp.org/session/plugins-en-wordpress-no-papa-shortcodes/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >WordPress' plugins? No, shortcodes<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+        <li class="tech-talks__list-item" aria-labelledby="tech-talk-10">
+          <h3 id="tech-talk-10" class="tech-talks__list-item-heading">
+            <a
+              class="tech-talks__list-item-link"
+              href="https://2017.bogota.wordcamp.org/session/plugins-en-wordpress-no-papa-shortcodes/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >WordPress' plugins? No, shortcodes</a>
+          </h3>
           <p>Tech talk for WordCamp Bogota.</p>
           <time datetime="2017-09-07">September 07, 2017</time>
         </li>
-        <li class="tech-talks__list-item">
-          <a
-            class="tech-talks__list-item-link"
-            href="https://www.meetup.com/wordpress-barranquilla/events/239666861/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Reusable Snippets in WordPress [shortcodes]<img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy"></a>
+        <li class="tech-talks__list-item" aria-labelledby="tech-talk-11">
+          <h3 id="tech-talk-11" class="tech-talks__list-item-heading">
+            <a
+              class="tech-talks__list-item-link"
+              href="https://www.meetup.com/wordpress-barranquilla/events/239666861/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Reusable Snippets in WordPress [shortcodes]</a>
+          </h3>
           <p>Tech talk for WordPress Barranquilla.</p>
           <time datetime="2017-05-08">May 08, 2017</time>
         </li>
@@ -848,7 +882,7 @@
         <li>
           <strong>English</strong>:
           <a href="https://certs.duolingo.com/4afe0f3b08315fefae49a49278fd1557" target="_blank" rel="noopener noreferrer">MCER/CEFR C1</a>
-          <img class="external-link-indicator" src="./assets/images/external-link.svg" alt="" height="15" width="15" loading="lazy">
+
         </li>
       </ul>
     </section>
@@ -860,7 +894,7 @@
       <img class="main-footer__location" src="./assets/images/location-pin.svg" alt="" height="40" width="40" loading="lazy">
       Barranquilla, <abbr title="Colombia">CO</abbr>
     </p>
-    <ul class="unstyled-list main-footer__links" role="list">
+    <ul class="unstyled-list main-footer__links">
       <li>
         <a
           class="main-footer__link"
@@ -946,13 +980,22 @@
       "@id": "#rhonalf",
       "name": "Rhonalf Martinez",
       "url": "https://rhonaldomaster.github.io/portfolio/",
+      "image": "./assets/images/avatar-400.jpg",
       "sameAs": [
         "https://twitter.com/rhonaldomaster",
         "https://github.com/rhonaldomaster",
         "https://instagram.com/rhonalf_mv",
         "https://co.linkedin.com/in/rhonalf"
       ],
-      "jobTitle": "Web developer"
+      "jobTitle": "Web developer",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Barranquilla",
+        "addressRegion": "Atlantico",
+        "addressCountry": "Colombia"
+      },
+      "email": "rhonaldomaster@gmail.com",
+      "telephone": "+573015614702"
     }
   </script>
 

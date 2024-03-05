@@ -53,7 +53,7 @@ function addSidebarObserver() {
   const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.15
+    threshold: 0.18
   };
   const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
