@@ -26,6 +26,11 @@ function showActiveMenuLink() {
 }
 
 function toggleSidebar(button = null) {
+  const isTablet = window.matchMedia('(min-width: 768px)');
+  if (isTablet.matches) {
+    return;
+  }
+
   const sidebar = document.querySelector('.js-aside');
   const sidebarNavigation = document.querySelector('.js-sidebar-navigation');
 
@@ -44,8 +49,8 @@ function toggleSidebar(button = null) {
 }
 
 function addSidebarObserver() {
-  const isTab = window.matchMedia('(min-width: 768px)');
-  if (!isTab.matches) {
+  const isTablet = window.matchMedia('(min-width: 768px)');
+  if (!isTablet.matches) {
     return;
   }
 
@@ -53,7 +58,7 @@ function addSidebarObserver() {
   const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.18
+    threshold: 0.1
   };
   const observer = new IntersectionObserver(handleIntersection, observerOptions);
 

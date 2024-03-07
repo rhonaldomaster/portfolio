@@ -13,21 +13,21 @@
   <meta property="og:site_name" content="Rhonalf's portfolio">
   <meta property="og:url" content="https://rhonaldomaster.github.io/portfolio/">
   <meta property="og:title" content="Rhonalf's portfolio">
-  <meta property="og:image" content="./assets/images/negative-space-css-syntax-code.jpg">
+  <meta property="og:image" content="./assets/images/hero-bg.jpg">
   <meta property="og:type" content="website">
   <meta property="og:description" content="Rhonalf Martinez's portfolio page. Check the links and find his knowledge and strengths">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rhonalf's portfolio">
   <meta name="twitter:creator" content="@rhonaldomaster">
-  <meta name="twitter:image" content="./assets/images/negative-space-css-syntax-code.jpg">
+  <meta name="twitter:image" content="./assets/images/hero-bg.jpg">
   <meta name="twitter:description" content="Rhonalf Martinez's portfolio page. Check the links and find his knowledge and strengths">
 
   <link rel="canonical" href="https://rhonaldomaster.github.io/portfolio/">
   <link rel="apple-touch-icon" href="./assets/images/avatar-400.jpg">
   <link rel="shortcut icon" href="./assets/images/avatar-200.jpg" type="image/x-icon">
 
-  <link rel="preload" fetchpriority="high" as="image" href="./assets/images/negative-space-css-syntax-code.webp" type="image/webp">
+  <link rel="preload" fetchpriority="high" as="image" href="./assets/images/hero-bg.webp" type="image/webp">
   <link rel="preload" fetchpriority="high" as="style" href="./assets/styles/normalize.css" type="text/css">
   <link rel="preload" fetchpriority="high" as="style" href="./assets/styles/index.css" type="text/css">
   <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/Lato-Regular.woff2" crossorigin>
@@ -78,10 +78,10 @@
   <aside class="sidebar js-aside" aria-labelledby="sidebar-title">
     <h2 id="sidebar-title" class="sr-only">Menu</h2>
     <picture>
-      <source srcset="./assets/images/avatar-200.webp, ./assets/images/avatar-400.webp 2x" type="image/webp">
+      <source media="(max-width: 767px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
       <img
-        src="./assets/images/avatar-200.jpg"
-        srcset="./assets/images/avatar-400.jpg 2x"
+        src="./assets/images/avatar-200.webp"
+        srcset="./assets/images/avatar-400.webp 2x"
         class="sidebar__avatar"
         height="200"
         width="200"
@@ -202,9 +202,11 @@
 
   <main id="main" class="main">
     <section id="hero" class="hero">
-      <h2 class="hero__title section-title">Hello World! I'm Rhonalf Martinez</h2>
-      <p class="hero__text">I'm your dedicated web developer and front-end specialist. Crafting digital experiences with passion and precision. Let's turn your ideas into stunning realities.</p>
-      <a href="#about" class="hero__button button button--primary">Explore more about me</a>
+      <div class="hero__container">
+        <h2 class="hero__title section-title">Hello World! I'm Rhonalf Martinez</h2>
+        <p class="hero__text">I'm your dedicated web developer and front-end specialist. Crafting digital experiences with passion and precision. Let's turn your ideas into stunning realities.</p>
+        <a href="#about" class="hero__button button button--primary">Explore more about me</a>
+      </div>
     </section>
 
     <section id="about" class="about">
@@ -237,7 +239,7 @@
             </li>
             <li>
               <a
-                href="https://github.com/rhonaldomaster/multifile"
+                href="https://github.com/rhonaldomaster/rzscript"
                 target="_blank" rel="noopener noreferrer"
               >rzscript: adds features to ManagerZone's website (online manager game)</a>
               <p>
@@ -608,7 +610,7 @@
             <a href="https://www.koombea.com/" target="_blank" rel="noopener noreferrer">Visit their website</a>
           </dd>
         </dl>
-        <em class="footnotes" id="footnote-koombea-projects" role="doc-footnote">
+        <em class="footnotes" id="footnote-koombea-projects">
           <span class="footnote-marker"></span>Disclaimer: The technology stack of this/these site(s) may have undergone changes.
         </em>
       </article>
@@ -966,7 +968,7 @@
       "@type": "WebSite",
       "name": "Rhonalf Martinez's portfolio",
       "url": "https://rhonaldomaster.github.io/portfolio/",
-      "image": "./assets/images/negative-space-css-syntax-code.jpg",
+      "image": "./assets/images/hero-bg.jpg",
       "author": {
         "type": "Person",
         "@id": "#rhonalf"
