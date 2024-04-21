@@ -366,13 +366,6 @@ abbr {
   max-width: fit-content;
 }
 
-.footnote-marker::after {
-  color: var(--color-scarlet);
-  content: "*";
-  font-weight: normal;
-  font-size: 1.6rem;
-}
-
 /* about */
 .about {
   padding: 2rem 2rem 0;
